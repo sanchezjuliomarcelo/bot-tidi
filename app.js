@@ -14,7 +14,13 @@ const sendBtn = document.getElementById("send-btn");
  */
 function appendMessage(sender, text) {
   const msgDiv = document.createElement("div");
-  msgDiv.classList.add(sender === "bot" ? "bot-message" : "user-message");
+
+  // Asignar la clase correcta (bot o usuario)
+  if (sender === "bot") {
+    msgDiv.classList.add("bot-message");
+  } else {
+    msgDiv.classList.add("user-message");
+  }
 
   // Separamos el texto en líneas
   const lines = text.split("\n");

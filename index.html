@@ -2,32 +2,32 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simulador de Bot - Estilo WhatsApp</title>
-
-  <!-- Enlace a estilos personalizados -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Contenedor que simula la pantalla de WhatsApp -->
+  <!-- Contenedor principal del chat -->
   <div class="chat-container">
-    <!-- Encabezado con estilo similar a WhatsApp -->
+    
+    <!-- Encabezado (Simulación de WhatsApp) -->
     <div class="chat-header">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
       <span>ChatBot</span>
     </div>
 
-    <!-- Ventana de chat donde aparecerán los mensajes -->
+    <!-- Área de mensajes -->
     <div id="chat-window" class="chat-window"></div>
 
-    <!-- Barra de entrada de texto -->
+    <!-- Barra de entrada -->
     <div class="input-container">
       <input type="text" id="user-input" placeholder="Escribe un mensaje..." />
       <button id="send-btn">➤</button>
     </div>
+    
   </div>
 
-  <!-- Script de la lógica -->
   <script src="app.js"></script>
 </body>
 </html>

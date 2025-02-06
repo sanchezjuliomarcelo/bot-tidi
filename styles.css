@@ -46,7 +46,9 @@ body {
   flex: 1;
   padding: 10px;
   overflow-y: auto;
-  background-color: #ece5dd; /* Fondo de chat similar a WhatsApp */
+  background-color: #ece5dd; /* Fondo de WhatsApp */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Mensajes del bot (izquierda) */
@@ -58,9 +60,10 @@ body {
   max-width: 70%;
   word-wrap: break-word;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  align-self: flex-start; /* Se alinea a la izquierda */
 }
 
-/* Mensajes del usuario (derecha) */
+/* Mensajes del usuario (derecha, completamente alineado) */
 .user-message {
   background-color: #dcf8c6; /* Verde claro de WhatsApp */
   padding: 8px 12px;
@@ -68,8 +71,8 @@ body {
   margin: 5px 0;
   max-width: 70%;
   word-wrap: break-word;
-  align-self: flex-end;
-  text-align: right;
+  align-self: flex-end; /* Totalmente a la derecha */
+  text-align: left;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
