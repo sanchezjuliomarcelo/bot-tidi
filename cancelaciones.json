@@ -1,0 +1,9 @@
+{
+    "flowCancelarCompra": {
+      "message": "Para cancelar, envíanos tu número de orden y la razón. (Escribe cualquier texto o 'm' para Menú principal).",
+      "options": {
+        "m": "menuPrincipal"
+      }
+    }
+  }
+  

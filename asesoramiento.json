@@ -1,0 +1,32 @@
+{
+    "flowAsesoramiento": {
+      "message": "¿Sobre qué tipo de producto necesitas asesoramiento?\n1. Informática y celulares\n2. Electrodomésticos\n3. TV y Audio\n4. Deportes y Tiempo Libre\n5. Pequeños electrodomésticos\n6. Cuidado personal y salud\n7. Bazar\n8. Otras categorías",
+      "options": {
+        "1": "flowAsesoramientoInformaticaCelulares",
+        "2": "flowAsesoramientoElectrodomesticos",
+        "3": "flowAsesoramientoTVAudio",
+        "4": "flowAsesoramientoDeportes",
+        "5": "flowAsesoramientoPequenosElectrodomesticos",
+        "6": "flowAsesoramientoCuidadoPersonalSalud",
+        "7": "flowAsesoramientoBazar",
+        "8": "flowAsesoramientoOtrasCategorias"
+      }
+    },
+  
+    "flowAsesoramientoInformaticaCelulares": {
+      "message": "En esta categoría encontrarás laptops, PCs de escritorio, tablets, smartphones y accesorios.\n\n¿Deseas regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N)?",
+      "options": {
+        "S": "menuPrincipal",
+        "N": "flowAsesoramiento"
+      }
+    },
+  
+    "flowAsesoramientoElectrodomesticos": {
+      "message": "En electrodomésticos grandes contamos con refrigeradores, lavadoras, cocinas, hornos, etc.\n\n¿Deseas regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N)?",
+      "options": {
+        "S": "menuPrincipal",
+        "N": "flowAsesoramiento"
+      }
+    }
+  }
+  

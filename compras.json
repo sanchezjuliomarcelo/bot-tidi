@@ -1,0 +1,33 @@
+{
+    "flowComoComprar": {
+      "message": "Para comprar, ingresa a nuestra web, añade productos al carrito y sigue los pasos de pago y envío. ¿Deseas más detalles?\na) Métodos de pago\nb) Costo de envío\nc) Tiempo de entrega\nm) Menú principal",
+      "options": {
+        "a": "flowMetodosPago",
+        "b": "flowCostoEnvio",
+        "c": "flowTiempoEntrega",
+        "m": "menuPrincipal"
+      }
+    },
+  
+    "flowMetodosPago": {
+      "message": "Aceptamos tarjetas de crédito, débito y transferencias. (m) Menú principal",
+      "options": {
+        "m": "menuPrincipal"
+      }
+    },
+  
+    "flowCostoEnvio": {
+      "message": "El envío es gratuito a partir de $100 en compras. (m) Menú principal",
+      "options": {
+        "m": "menuPrincipal"
+      }
+    },
+  
+    "flowTiempoEntrega": {
+      "message": "Normalmente entregamos entre 2-5 días hábiles. (m) Menú principal",
+      "options": {
+        "m": "menuPrincipal"
+      }
+    }
+  }
+  

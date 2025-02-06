@@ -1,0 +1,9 @@
+{
+    "flowModificarCompra": {
+      "message": "Para modificar tu compra, necesitamos tu número de orden y los cambios requeridos. (Escribe cualquier texto o presiona 'm' para Menú principal).",
+      "options": {
+        "m": "menuPrincipal"
+      }
+    }
+  }
+  

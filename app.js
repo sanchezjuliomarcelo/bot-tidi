@@ -1,11 +1,42 @@
 // Variables globales
-let botFlows = {};
-let currentFlow = "";
+let botFlows = {}; // Objeto donde se cargarán los flujos
+let currentFlow = ""; // Estado actual del bot
 
 // Referencias al DOM
 const chatWindow = document.getElementById("chat-window");
 const userInput = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
+
+// Archivos JSON a cargar
+const flowFiles = [
+  "menu.json",
+  "asesoramiento.json",
+  "compras.json",
+  "estado.json",
+  "modificaciones.json",
+  "cancelaciones.json",
+  "garantias.json"
+];
+
+/**
+ * Cargar todos los JSON y combinarlos en `botFlows`
+ */
+async function loadFlows() {
+  try {
+    const flowPromises = flowFiles.map(file => fetch(file).then(res => res.json()));
+    const flowData = await Promise.all(flowPromises);
+
+    // Fusionar todos los JSON en `botFlows`
+    botFlows = Object.assign({}, ...flowData);
+    
+    // Iniciar en el menú principal
+    currentFlow = "menuPrincipal";
+    appendMessage("bot", botFlows[currentFlow].message);
+  } catch (error) {
+    console.error("Error al cargar los flujos:", error);
+    appendMessage("bot", "Hubo un error al cargar la conversación.");
+  }
+}
 
 /**
  * Función para insertar mensajes en el chat.
@@ -16,11 +47,7 @@ function appendMessage(sender, text) {
   const msgDiv = document.createElement("div");
 
   // Asignar la clase correcta (bot o usuario)
-  if (sender === "bot") {
-    msgDiv.classList.add("bot-message");
-  } else {
-    msgDiv.classList.add("user-message");
-  }
+  msgDiv.classList.add(sender === "bot" ? "bot-message" : "user-message");
 
   // Separamos el texto en líneas
   const lines = text.split("\n");
@@ -63,7 +90,15 @@ function handleUserInput() {
 
   appendMessage("user", input);
 
+  if (!botFlows[currentFlow]) {
+    appendMessage("bot", "Error: flujo no encontrado. Regresando al Menú Principal...");
+    currentFlow = "menuPrincipal";
+    appendMessage("bot", botFlows[currentFlow].message);
+    return;
+  }
+
   const flowConfig = botFlows[currentFlow];
+
   if (flowConfig.options) {
     const nextFlowKey = flowConfig.options[input];
 
@@ -82,18 +117,8 @@ function handleUserInput() {
   userInput.value = "";
 }
 
-// Cargar `flows.json`
-fetch("flows.json")
-  .then(response => response.json())
-  .then(data => {
-    botFlows = data;
-    currentFlow = "menuPrincipal";
-    appendMessage("bot", botFlows[currentFlow].message);
-  })
-  .catch(error => {
-    console.error("Error al cargar flows.json:", error);
-    appendMessage("bot", "Hubo un error al cargar la conversación.");
-  });
+// Llamar a la función de carga al inicio
+loadFlows();
 
 // Eventos
 sendBtn.addEventListener("click", handleUserInput);

@@ -1,0 +1,9 @@
+{
+    "flowGarantias": {
+      "message": "Para garantías, necesitamos número de orden, fecha de compra y el producto con fallo. (Escribe cualquier texto o 'm' para Menú principal).",
+      "options": {
+        "m": "menuPrincipal"
+      }
+    }
+  }
+  
