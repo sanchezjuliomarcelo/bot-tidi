@@ -1,0 +1,167 @@
+{
+    "menuPrincipal": {
+      "message": "¡Hola! Bienvenido(a) a [Tu Tienda de Electrónica y Hogar].\nElige una opción para que pueda ayudarte:\n\nA. Recibir asesoramiento sobre productos.\nB. Cómo comprar.\nC. Estado de mi compra.\nD. Modificar mi compra.\nE. Cancelar mi compra.\nF. Gestión de Garantías.",
+      "options": {
+        "A": "flowAsesoramiento",
+        "B": "flowComoComprar",
+        "C": "flowEstadoCompra",
+        "D": "flowModificarCompra",
+        "E": "flowCancelarCompra",
+        "F": "flowGarantias"
+      }
+    },
+  
+    "flowAsesoramiento": {
+      "message": "¿Sobre qué tipo de producto necesitas asesoramiento?\n1. Electrónica\n2. Hogar\n3. Otras categorías",
+      "options": {
+        "1": "flowAsesoramientoElectro",
+        "2": "flowAsesoramientoHogar",
+        "3": "flowAsesoramientoOtros"
+      }
+    },
+  
+    "flowAsesoramientoElectro": {
+      "message": "¡Genial! En electrónica contamos con:\na) Televisores\nb) Celulares\nc) Computadoras\n\nElige la letra que corresponda:",
+      "options": {
+        "a": "flowAsesoramientoElectro_TV",
+        "b": "flowAsesoramientoElectro_Celulares",
+        "c": "flowAsesoramientoElectro_Computadoras"
+      }
+    },
+  
+    "flowAsesoramientoElectro_TV": {
+      "message": "Información sobre televisores:\n¿Qué deseas?\na) Precios\nb) Características\nc) Recomendaciones",
+      "options": {
+        "a": "flowAsesoramientoElectro_TV_Precios",
+        "b": "flowAsesoramientoElectro_TV_Caracteristicas",
+        "c": "flowAsesoramientoElectro_TV_Recomendaciones"
+      }
+    },
+    "flowAsesoramientoElectro_TV_Precios": {
+      "message": "Nuestra línea de televisores va desde $300 hasta $1200, dependiendo del modelo. ¿Deseas regresar al menú principal? (S/N)",
+      "options": {
+        "S": "menuPrincipal",
+        "N": "flowAsesoramientoElectro_TV"
+      }
+    },
+    "flowAsesoramientoElectro_TV_Caracteristicas": {
+      "message": "Contamos con televisores 4K, Smart TV, etc. ¿Deseas regresar al menú principal? (S/N)",
+      "options": {
+        "S": "menuPrincipal",
+        "N": "flowAsesoramientoElectro_TV"
+      }
+    },
+    "flowAsesoramientoElectro_TV_Recomendaciones": {
+      "message": "Según tu presupuesto y uso, podemos recomendarte distintas marcas. ¿Deseas regresar al menú principal? (S/N)",
+      "options": {
+        "S": "menuPrincipal",
+        "N": "flowAsesoramientoElectro_TV"
+      }
+    },
+  
+    "flowAsesoramientoElectro_Celulares": {
+      "message": "Información sobre celulares:\n¿Qué deseas?\na) Precios\nb) Características\nc) Recomendaciones",
+      "options": {
+        "a": "flowAsesoramientoElectro_Celulares_Precios",
+        "b": "flowAsesoramientoElectro_Celulares_Caracteristicas",
+        "c": "flowAsesoramientoElectro_Celulares_Recomendaciones"
+      }
+    },
+    "flowAsesoramientoElectro_Celulares_Precios": {
+      "message": "Celulares desde $100 hasta $1000. ¿Deseas regresar al menú principal? (S/N)",
+      "options": {
+        "S": "menuPrincipal",
+        "N": "flowAsesoramientoElectro_Celulares"
+      }
+    },
+    "flowAsesoramientoElectro_Celulares_Caracteristicas": {
+      "message": "Tenemos distintas gamas, 4G/5G, distintas memorias, etc. ¿Deseas regresar al menú principal? (S/N)",
+      "options": {
+        "S": "menuPrincipal",
+        "N": "flowAsesoramientoElectro_Celulares"
+      }
+    },
+    "flowAsesoramientoElectro_Celulares_Recomendaciones": {
+      "message": "Podemos asesorarte según tu uso (gaming, fotografía, etc.). ¿Deseas regresar al menú principal? (S/N)",
+      "options": {
+        "S": "menuPrincipal",
+        "N": "flowAsesoramientoElectro_Celulares"
+      }
+    },
+  
+    "flowAsesoramientoElectro_Computadoras": {
+      "message": "En computadoras tenemos desktop, laptops y más. ¿Deseas regresar al menú principal? (S/N)",
+      "options": {
+        "S": "menuPrincipal"
+      }
+    },
+  
+    "flowAsesoramientoHogar": {
+      "message": "En hogar tenemos lavadoras, refrigeradores, y más. ¿Deseas regresar al menú principal? (S/N)",
+      "options": {
+        "S": "menuPrincipal"
+      }
+    },
+  
+    "flowAsesoramientoOtros": {
+      "message": "Tenemos otras categorías (accesorios, etc.). ¿Deseas regresar al menú principal? (S/N)",
+      "options": {
+        "S": "menuPrincipal"
+      }
+    },
+  
+    "flowComoComprar": {
+      "message": "Para comprar, ingresa a nuestra web, añade productos al carrito y sigue los pasos de pago y envío. ¿Deseas más detalles?\na) Métodos de pago\nb) Costo de envío\nc) Tiempo de entrega\nm) Menú principal",
+      "options": {
+        "a": "flowMetodosPago",
+        "b": "flowCostoEnvio",
+        "c": "flowTiempoEntrega",
+        "m": "menuPrincipal"
+      }
+    },
+    "flowMetodosPago": {
+      "message": "Aceptamos tarjetas de crédito, débito y transferencias. (m) Menú principal",
+      "options": {
+        "m": "menuPrincipal"
+      }
+    },
+    "flowCostoEnvio": {
+      "message": "El envío es gratuito a partir de $100 en compras. (m) Menú principal",
+      "options": {
+        "m": "menuPrincipal"
+      }
+    },
+    "flowTiempoEntrega": {
+      "message": "Normalmente entregamos entre 2-5 días hábiles. (m) Menú principal",
+      "options": {
+        "m": "menuPrincipal"
+      }
+    },
+  
+    "flowEstadoCompra": {
+      "message": "Para conocer tu estado, envíanos tu número de orden o referencia. (Escribe cualquier texto como #12345).",
+      "options": {}
+    },
+  
+    "flowModificarCompra": {
+      "message": "Para modificar tu compra, necesitamos tu número de orden y los cambios requeridos. (Escribe cualquier texto o presiona 'm' para Menú principal).",
+      "options": {
+        "m": "menuPrincipal"
+      }
+    },
+  
+    "flowCancelarCompra": {
+      "message": "Para cancelar, envíanos tu número de orden y la razón. (Escribe cualquier texto o 'm' para Menú principal).",
+      "options": {
+        "m": "menuPrincipal"
+      }
+    },
+  
+    "flowGarantias": {
+      "message": "Para garantías, necesitamos número de orden, fecha de compra y el producto con fallo. (Escribe cualquier texto o 'm' para Menú principal).",
+      "options": {
+        "m": "menuPrincipal"
+      }
+    }
+  }
+  
