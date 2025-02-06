@@ -1,6 +1,6 @@
 {
     "menuPrincipal": {
-      "message": "¡Hola! Bienvenido(a) a [Tu Tienda de Electrónica y Hogar].\nElige una opción para que pueda ayudarte:\n\nA. Recibir asesoramiento sobre productos.\nB. Cómo comprar.\nC. Estado de mi compra.\nD. Modificar mi compra.\nE. Cancelar mi compra.\nF. Gestión de Garantías.",
+      "message": "¡Hola! 😊 Gracias por contactarnos.\nEstoy aquí para ayudarte. Por favor, elige una de las opciones para continuar:\n\nA. Recibir asesoramiento sobre productos.\nB. Cómo comprar.\nC. Estado de mi compra.\nD. Modificar mi compra.\nE. Cancelar mi compra.\nF. Gestión de Garantías.",
       "options": {
         "A": "flowAsesoramiento",
         "B": "flowComoComprar",
@@ -11,105 +11,86 @@
       }
     },
   
+
     "flowAsesoramiento": {
-      "message": "¿Sobre qué tipo de producto necesitas asesoramiento?\n1. Electrónica\n2. Hogar\n3. Otras categorías",
+      "message": "¿Sobre qué tipo de producto necesitas asesoramiento?\n1. Informática y celulares\n2. Electrodomésticos\n3. TV y Audio\n4. Deportes y Tiempo Libre\n5. Pequeños electrodomésticos\n6. Cuidado personal y salud\n7. Bazar\n8. Otras categorías",
       "options": {
-        "1": "flowAsesoramientoElectro",
-        "2": "flowAsesoramientoHogar",
-        "3": "flowAsesoramientoOtros"
+        "1": "flowAsesoramientoInformaticaCelulares",
+        "2": "flowAsesoramientoElectrodomesticos",
+        "3": "flowAsesoramientoTVAudio",
+        "4": "flowAsesoramientoDeportes",
+        "5": "flowAsesoramientoPequenosElectrodomesticos",
+        "6": "flowAsesoramientoCuidadoPersonalSalud",
+        "7": "flowAsesoramientoBazar",
+        "8": "flowAsesoramientoOtrasCategorias"
       }
     },
   
-    "flowAsesoramientoElectro": {
-      "message": "¡Genial! En electrónica contamos con:\na) Televisores\nb) Celulares\nc) Computadoras\n\nElige la letra que corresponda:",
-      "options": {
-        "a": "flowAsesoramientoElectro_TV",
-        "b": "flowAsesoramientoElectro_Celulares",
-        "c": "flowAsesoramientoElectro_Computadoras"
-      }
-    },
-  
-    "flowAsesoramientoElectro_TV": {
-      "message": "Información sobre televisores:\n¿Qué deseas?\na) Precios\nb) Características\nc) Recomendaciones",
-      "options": {
-        "a": "flowAsesoramientoElectro_TV_Precios",
-        "b": "flowAsesoramientoElectro_TV_Caracteristicas",
-        "c": "flowAsesoramientoElectro_TV_Recomendaciones"
-      }
-    },
-    "flowAsesoramientoElectro_TV_Precios": {
-      "message": "Nuestra línea de televisores va desde $300 hasta $1200, dependiendo del modelo. ¿Deseas regresar al menú principal? (S/N)",
+    "flowAsesoramientoInformaticaCelulares": {
+      "message": "En esta categoría encontrarás laptops, PCs de escritorio, tablets, smartphones y accesorios.\n\n¿Deseas regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N)?",
       "options": {
         "S": "menuPrincipal",
-        "N": "flowAsesoramientoElectro_TV"
-      }
-    },
-    "flowAsesoramientoElectro_TV_Caracteristicas": {
-      "message": "Contamos con televisores 4K, Smart TV, etc. ¿Deseas regresar al menú principal? (S/N)",
-      "options": {
-        "S": "menuPrincipal",
-        "N": "flowAsesoramientoElectro_TV"
-      }
-    },
-    "flowAsesoramientoElectro_TV_Recomendaciones": {
-      "message": "Según tu presupuesto y uso, podemos recomendarte distintas marcas. ¿Deseas regresar al menú principal? (S/N)",
-      "options": {
-        "S": "menuPrincipal",
-        "N": "flowAsesoramientoElectro_TV"
+        "N": "flowAsesoramiento"
       }
     },
   
-    "flowAsesoramientoElectro_Celulares": {
-      "message": "Información sobre celulares:\n¿Qué deseas?\na) Precios\nb) Características\nc) Recomendaciones",
-      "options": {
-        "a": "flowAsesoramientoElectro_Celulares_Precios",
-        "b": "flowAsesoramientoElectro_Celulares_Caracteristicas",
-        "c": "flowAsesoramientoElectro_Celulares_Recomendaciones"
-      }
-    },
-    "flowAsesoramientoElectro_Celulares_Precios": {
-      "message": "Celulares desde $100 hasta $1000. ¿Deseas regresar al menú principal? (S/N)",
+    "flowAsesoramientoElectrodomesticos": {
+      "message": "En electrodomésticos grandes contamos con refrigeradores, lavadoras, cocinas, hornos, etc.\n\n¿Deseas regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N)?",
       "options": {
         "S": "menuPrincipal",
-        "N": "flowAsesoramientoElectro_Celulares"
+        "N": "flowAsesoramiento"
       }
     },
-    "flowAsesoramientoElectro_Celulares_Caracteristicas": {
-      "message": "Tenemos distintas gamas, 4G/5G, distintas memorias, etc. ¿Deseas regresar al menú principal? (S/N)",
+  
+    "flowAsesoramientoTVAudio": {
+      "message": "En TV y Audio tenemos televisores (LED, 4K, Smart), barras de sonido, equipos de audio, proyectores y más.\n\n¿Deseas regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N)?",
       "options": {
         "S": "menuPrincipal",
-        "N": "flowAsesoramientoElectro_Celulares"
+        "N": "flowAsesoramiento"
       }
     },
-    "flowAsesoramientoElectro_Celulares_Recomendaciones": {
-      "message": "Podemos asesorarte según tu uso (gaming, fotografía, etc.). ¿Deseas regresar al menú principal? (S/N)",
+  
+    "flowAsesoramientoDeportes": {
+      "message": "En la sección deportes y tiempo libre encontrarás artículos de fitness, camping, ciclismo, equipamiento deportivo y más.\n\n¿Deseas regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N)?",
       "options": {
         "S": "menuPrincipal",
-        "N": "flowAsesoramientoElectro_Celulares"
+        "N": "flowAsesoramiento"
       }
     },
   
-    "flowAsesoramientoElectro_Computadoras": {
-      "message": "En computadoras tenemos desktop, laptops y más. ¿Deseas regresar al menú principal? (S/N)",
+    "flowAsesoramientoPequenosElectrodomesticos": {
+      "message": "En pequeños electrodomésticos están cafeteras, licuadoras, procesadoras, planchas, aspiradoras, etc.\n\n¿Deseas regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N)?",
       "options": {
-        "S": "menuPrincipal"
+        "S": "menuPrincipal",
+        "N": "flowAsesoramiento"
       }
     },
   
-    "flowAsesoramientoHogar": {
-      "message": "En hogar tenemos lavadoras, refrigeradores, y más. ¿Deseas regresar al menú principal? (S/N)",
+    "flowAsesoramientoCuidadoPersonalSalud": {
+      "message": "Aquí encontrarás secadores de pelo, afeitadoras, cepillos dentales eléctricos, masajeadores y otros productos de bienestar.\n\n¿Deseas regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N)?",
       "options": {
-        "S": "menuPrincipal"
+        "S": "menuPrincipal",
+        "N": "flowAsesoramiento"
       }
     },
   
-    "flowAsesoramientoOtros": {
-      "message": "Tenemos otras categorías (accesorios, etc.). ¿Deseas regresar al menú principal? (S/N)",
+    "flowAsesoramientoBazar": {
+      "message": "En bazar contamos con vajillas, cubiertos, ollas, sartenes y múltiples accesorios de cocina.\n\n¿Deseas regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N)?",
       "options": {
-        "S": "menuPrincipal"
+        "S": "menuPrincipal",
+        "N": "flowAsesoramiento"
       }
     },
   
+    "flowAsesoramientoOtrasCategorias": {
+      "message": "Si no encontraste tu producto en las categorías anteriores, por favor cuéntanos qué buscas y te asesoraremos.\n\n¿Deseas regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N)?",
+      "options": {
+        "S": "menuPrincipal",
+        "N": "flowAsesoramiento"
+      }
+    },
+  
+
     "flowComoComprar": {
       "message": "Para comprar, ingresa a nuestra web, añade productos al carrito y sigue los pasos de pago y envío. ¿Deseas más detalles?\na) Métodos de pago\nb) Costo de envío\nc) Tiempo de entrega\nm) Menú principal",
       "options": {
@@ -138,11 +119,12 @@
       }
     },
   
+
     "flowEstadoCompra": {
       "message": "Para conocer tu estado, envíanos tu número de orden o referencia. (Escribe cualquier texto como #12345).",
       "options": {}
     },
-  
+
     "flowModificarCompra": {
       "message": "Para modificar tu compra, necesitamos tu número de orden y los cambios requeridos. (Escribe cualquier texto o presiona 'm' para Menú principal).",
       "options": {
@@ -150,6 +132,7 @@
       }
     },
   
+
     "flowCancelarCompra": {
       "message": "Para cancelar, envíanos tu número de orden y la razón. (Escribe cualquier texto o 'm' para Menú principal).",
       "options": {
@@ -157,6 +140,7 @@
       }
     },
   
+ 
     "flowGarantias": {
       "message": "Para garantías, necesitamos número de orden, fecha de compra y el producto con fallo. (Escribe cualquier texto o 'm' para Menú principal).",
       "options": {
