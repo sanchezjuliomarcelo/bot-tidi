@@ -2,58 +2,32 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulador de Bot</title>
+  <title>Simulador de Bot - Estilo WhatsApp</title>
 
-  <!-- Bootstrap 5 CSS (CDN) -->
-  <link 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
-    rel="stylesheet" 
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeo4B7z2CzBzHA34H5ydyClvOJ8TucZVeKw5OyZBqP6a5LZ0" 
-    crossorigin="anonymous"
-  />
-
-  <!-- Estilos propios -->
+  <!-- Enlace a estilos personalizados -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-light">
+<body>
 
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
+  <!-- Contenedor que simula la pantalla de WhatsApp -->
+  <div class="chat-container">
+    <!-- Encabezado con estilo similar a WhatsApp -->
+    <div class="chat-header">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+      <span>ChatBot</span>
+    </div>
 
-        <!-- Título -->
-        <h2 class="text-center mb-4">Bot de WhatsApp tidi</h2>
+    <!-- Ventana de chat donde aparecerán los mensajes -->
+    <div id="chat-window" class="chat-window"></div>
 
-        <!-- Caja de chat -->
-        <div class="card">
-          <div class="card-body chat-container">
-            <div id="chat-window" class="mb-3"></div>
-
-            <div class="input-group">
-              <input 
-                type="text" 
-                id="user-input" 
-                class="form-control" 
-                placeholder="Escribe aquí tu opción..."
-              />
-              <button id="send-btn" class="btn btn-success">Enviar</button>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
+    <!-- Barra de entrada de texto -->
+    <div class="input-container">
+      <input type="text" id="user-input" placeholder="Escribe un mensaje..." />
+      <button id="send-btn">➤</button>
     </div>
   </div>
 
-  <!-- Bootstrap 5 JS (CDN) - opcional, si requieres componentes interactivos -->
-  <script 
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+5q2Kexl+PVrSzV4l0II6ZMgDfGGF" 
-    crossorigin="anonymous">
-  </script>
-
-  <!-- Lógica de la app -->
+  <!-- Script de la lógica -->
   <script src="app.js"></script>
 </body>
 </html>

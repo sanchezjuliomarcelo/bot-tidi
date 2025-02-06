@@ -1,47 +1,107 @@
+/* Fuente de WhatsApp */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+/* General */
 body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .chat-container {
-    width: 400px;
-    margin: 40px auto;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-  }
-  
-  #chat-window {
-    height: 400px;
-    overflow-y: auto;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    padding: 10px;
-  }
-  
-  .input-container {
-    display: flex;
-    gap: 10px;
-  }
-  
-  #user-input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-  }
-  
-  #send-btn {
-    padding: 8px 16px;
-    border: none;
-    background: #007bff;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  #send-btn:hover {
-    background: #0056b3;
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  background-color: #075E54; /* Verde WhatsApp */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Contenedor del chat */
+.chat-container {
+  width: 350px;
+  max-width: 90%;
+  height: 600px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Encabezado del chat */
+.chat-header {
+  background-color: #128C7E;
+  color: white;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.chat-header img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Ventana del chat */
+.chat-window {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #ece5dd; /* Fondo de chat similar a WhatsApp */
+}
+
+/* Mensajes del bot (izquierda) */
+.bot-message {
+  background-color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin: 5px 0;
+  max-width: 70%;
+  word-wrap: break-word;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Mensajes del usuario (derecha) */
+.user-message {
+  background-color: #dcf8c6; /* Verde claro de WhatsApp */
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin: 5px 0;
+  max-width: 70%;
+  word-wrap: break-word;
+  align-self: flex-end;
+  text-align: right;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Barra de entrada de texto */
+.input-container {
+  display: flex;
+  padding: 10px;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  align-items: center;
+}
+
+#user-input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  outline: none;
+}
+
+#send-btn {
+  background-color: #128C7E;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin-left: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#send-btn:hover {
+  background-color: #0d7a69;
+}
