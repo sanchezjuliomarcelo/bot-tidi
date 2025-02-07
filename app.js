@@ -15,8 +15,7 @@ const flowFiles = [
   "quierocomprar.json",
   "modificaciones.json",
   "cancelaciones.json",
-  "garantias.json",
-   // Se agregó promociones.json para que lo cargue correctamente
+  "garantias.json"
 ];
 
 /**
@@ -73,7 +72,7 @@ function appendMessage(sender, text, images = [], link = null) {
  * Maneja el input del usuario y la navegación entre flujos.
  */
 function handleUserInput() {
-  const input = userInput.value.trim();
+  const input = userInput.value.trim().toUpperCase(); // Convertimos a mayúsculas
   if (!input) return;
 
   appendMessage("user", input);
@@ -88,18 +87,25 @@ function handleUserInput() {
   const flowConfig = botFlows[currentFlow];
 
   if (flowConfig.options) {
-    const nextFlowKey = flowConfig.options[input];
+    // Convertimos las claves del JSON a mayúsculas para que coincidan con la entrada del usuario
+    const optionsKeys = Object.keys(flowConfig.options).reduce((acc, key) => {
+      acc[key.toUpperCase()] = flowConfig.options[key];
+      return acc;
+    }, {});
+
+    const nextFlowKey = optionsKeys[input]; // Buscar la opción convertida a mayúsculas
 
     if (nextFlowKey && botFlows[nextFlowKey]) {
       currentFlow = nextFlowKey;
 
       // Si es el flujo de promociones, cargar imágenes y link
       if (currentFlow === "flowPromociones") {
+        const promoData = botFlows[currentFlow];
         appendMessage(
           "bot",
-          botFlows[currentFlow].message,
-          botFlows[currentFlow].images,
-          botFlows[currentFlow].link
+          promoData.message,
+          promoData.images || [], // Asegurar que images no sea undefined
+          promoData.link || null  // Asegurar que link no sea undefined
         );
       } else {
         appendMessage("bot", botFlows[currentFlow].message);
