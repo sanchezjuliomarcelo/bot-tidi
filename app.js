@@ -11,11 +11,12 @@ const sendBtn = document.getElementById("send-btn");
 const flowFiles = [
   "menu.json",
   "asesoramiento.json",
-  "compras.json",
-  "estado.json",
+  "promociones.json",
+  "quierocomprar.json",
   "modificaciones.json",
   "cancelaciones.json",
-  "garantias.json"
+  "garantias.json",
+   // Se agregó promociones.json para que lo cargue correctamente
 ];
 
 /**
@@ -42,38 +43,25 @@ async function loadFlows() {
  * Función para insertar mensajes en el chat.
  * @param {string} sender - 'bot' o 'user'.
  * @param {string} text - El texto a mostrar.
+ * @param {array} images - Lista de imágenes a mostrar.
+ * @param {object} link - Objeto con `text` y `url` para el enlace.
  */
-function appendMessage(sender, text) {
+function appendMessage(sender, text, images = [], link = null) {
   const msgDiv = document.createElement("div");
-
-  // Asignar la clase correcta (bot o usuario)
   msgDiv.classList.add(sender === "bot" ? "bot-message" : "user-message");
 
-  // Separamos el texto en líneas
-  const lines = text.split("\n");
+  let htmlContent = `<p>${text.replace(/\n/g, "<br>")}</p>`;
 
-  let htmlContent = "";
-  let listItems = [];
+  // Si hay imágenes, agregarlas
+  if (images.length > 0) {
+    images.forEach(imgSrc => {
+      htmlContent += `<img src="${imgSrc}" class="promo-image" alt="Promoción">`;
+    });
+  }
 
-  // Regex para detectar opciones tipo "A. Opción" o "1. Opción"
-  const optionRegex = /^[A-Za-z0-9]\.\s?.+/;
-
-  lines.forEach((line) => {
-    const trimmed = line.trim();
-    if (!trimmed) {
-      htmlContent += "<br>";
-      return;
-    }
-
-    if (optionRegex.test(trimmed)) {
-      listItems.push(`<li>${trimmed}</li>`);
-    } else {
-      htmlContent += `<p>${trimmed}</p>`;
-    }
-  });
-
-  if (listItems.length > 0) {
-    htmlContent += `<ul>${listItems.join("")}</ul>`;
+  // Si hay un enlace, mostrarlo con un icono clickeable
+  if (link) {
+    htmlContent += `<p><a href="${link.url}" target="_blank" class="promo-link">🔗 ${link.text}</a></p>`;
   }
 
   msgDiv.innerHTML = htmlContent;
@@ -104,7 +92,18 @@ function handleUserInput() {
 
     if (nextFlowKey && botFlows[nextFlowKey]) {
       currentFlow = nextFlowKey;
-      appendMessage("bot", botFlows[currentFlow].message);
+
+      // Si es el flujo de promociones, cargar imágenes y link
+      if (currentFlow === "flowPromociones") {
+        appendMessage(
+          "bot",
+          botFlows[currentFlow].message,
+          botFlows[currentFlow].images,
+          botFlows[currentFlow].link
+        );
+      } else {
+        appendMessage("bot", botFlows[currentFlow].message);
+      }
     } else {
       appendMessage("bot", "No entendí esa opción. Por favor, intenta de nuevo.");
     }

@@ -1,13 +1,13 @@
 {
     "menuPrincipal": {
-      "message": "¡Hola! 😊 Gracias por contactarnos.\nEstoy aquí para ayudarte. Por favor, elige una de las opciones para continuar:\n\nA. Recibir asesoramiento sobre productos.\nB. Cómo comprar.\nC. Estado de mi compra.\nD. Modificar mi compra.\nE. Cancelar mi compra.\nF. Gestión de Garantías.",
+      "message": "¡Hola! 😊 Gracias por contactarnos.\nEstoy aquí para ayudarte. Por favor, elige una de las opciones para continuar:\n\nA. Consultar sobre productos.\nB. Promociones.\nC. Quiero comprar.\nD. Modificar mi compra.\nE. Cancelar mi compra.\nF. Gestión de Garantías.",
       "options": {
-        "A": "flowAsesoramiento",
-        "B": "flowComoComprar",
-        "C": "flowEstadoCompra",
-        "D": "flowModificarCompra",
-        "E": "flowCancelarCompra",
-        "F": "flowGarantias"
+        "a": "flowAsesoramiento",
+        "b": "flowPromociones",
+        "c": "flowquierocomprar",
+        "d": "flowModificarCompra",
+        "e": "flowCancelarCompra",
+        "f": "flowGarantias"
       }
     }
   }

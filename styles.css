@@ -108,3 +108,20 @@ body {
 #send-btn:hover {
   background-color: #0d7a69;
 }
+
+.promo-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.promo-link {
+  color: #128C7E;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.promo-link:hover {
+  text-decoration: underline;
+}

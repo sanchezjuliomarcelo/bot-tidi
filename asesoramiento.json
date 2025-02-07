@@ -1,32 +1,79 @@
 {
-    "flowAsesoramiento": {
-      "message": "¿Sobre qué tipo de producto necesitas asesoramiento?\n1. Informática y celulares\n2. Electrodomésticos\n3. TV y Audio\n4. Deportes y Tiempo Libre\n5. Pequeños electrodomésticos\n6. Cuidado personal y salud\n7. Bazar\n8. Otras categorías",
-      "options": {
-        "1": "flowAsesoramientoInformaticaCelulares",
-        "2": "flowAsesoramientoElectrodomesticos",
-        "3": "flowAsesoramientoTVAudio",
-        "4": "flowAsesoramientoDeportes",
-        "5": "flowAsesoramientoPequenosElectrodomesticos",
-        "6": "flowAsesoramientoCuidadoPersonalSalud",
-        "7": "flowAsesoramientoBazar",
-        "8": "flowAsesoramientoOtrasCategorias"
-      }
-    },
-  
-    "flowAsesoramientoInformaticaCelulares": {
-      "message": "En esta categoría encontrarás laptops, PCs de escritorio, tablets, smartphones y accesorios.\n\n¿Deseas regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N)?",
-      "options": {
-        "S": "menuPrincipal",
-        "N": "flowAsesoramiento"
-      }
-    },
-  
-    "flowAsesoramientoElectrodomesticos": {
-      "message": "En electrodomésticos grandes contamos con refrigeradores, lavadoras, cocinas, hornos, etc.\n\n¿Deseas regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N)?",
-      "options": {
-        "S": "menuPrincipal",
-        "N": "flowAsesoramiento"
-      }
+  "flowAsesoramiento": {
+    "message": "¿Sobre qué tipo de producto necesitás asesoramiento?\n\n1. Informática y Celulares\n2. Electrodomésticos\n3. TV y Audio\n4. Deportes y Tiempo Libre\n5. Pequeños Electrodomésticos\n6. Cuidado Personal y Salud\n7. Bazar\n8. Otras Categorías\n\nSi ya tenés un producto específico en mente, ingresá el nombre o el código.",
+    "options": {
+      "1": "flowAsesoramientoInformaticaCelulares",
+      "2": "flowAsesoramientoElectrodomesticos",
+      "3": "flowAsesoramientoTVAudio",
+      "4": "flowAsesoramientoDeportes",
+      "5": "flowAsesoramientoPequenosElectrodomesticos",
+      "6": "flowAsesoramientoCuidadoPersonalSalud",
+      "7": "flowAsesoramientoBazar",
+      "8": "flowAsesoramientoOtrasCategorias"
+    }
+  },
+
+  "flowAsesoramientoInformaticaCelulares": {
+    "message": "En esta categoría encontrarás laptops, PCs de escritorio, tablets, smartphones y accesorios en promoción.\n\nPara ver todos los productos, visitá: [URL_INFORMATICA_CELULARES]\n\n¿Te gustaría recibir asesoramiento personalizado? Recordá que podés escribir “Asesor” en cualquier momento.\n\nSi querés regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N), elegí una opción.",
+    "options": {
+      "S": "menuPrincipal",
+      "N": "flowAsesoramiento"
+    }
+  },
+
+  "flowAsesoramientoElectrodomesticos": {
+    "message": "En electrodomésticos grandes contamos con refrigeradores, lavadoras, cocinas, hornos, entre otros en promoción.\n\nPara ver todos los productos, visitá: [URL_ELECTRODOMESTICOS]\n\n¿Te gustaría recibir asesoramiento personalizado? Recordá que podés escribir “Asesor” en cualquier momento.\n\nSi querés regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N), elegí una opción.",
+    "options": {
+      "S": "menuPrincipal",
+      "N": "flowAsesoramiento"
+    }
+  },
+
+  "flowAsesoramientoTVAudio": {
+    "message": "En esta categoría encontrarás televisores, barras de sonido, home theaters y parlantes en promoción.\n\nPara ver todos los productos, visitá: [URL_TV_AUDIO]\n\n¿Te gustaría recibir asesoramiento personalizado? Recordá que podés escribir “Asesor” en cualquier momento.\n\nSi querés regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N), elegí una opción.",
+    "options": {
+      "S": "menuPrincipal",
+      "N": "flowAsesoramiento"
+    }
+  },
+
+  "flowAsesoramientoDeportes": {
+    "message": "Aquí podés encontrar bicicletas, cintas para correr, monopatines eléctricos y más artículos deportivos en promoción.\n\nPara ver todos los productos, visitá: [URL_DEPORTES]\n\n¿Te gustaría recibir asesoramiento personalizado? Recordá que podés escribir “Asesor” en cualquier momento.\n\nSi querés regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N), elegí una opción.",
+    "options": {
+      "S": "menuPrincipal",
+      "N": "flowAsesoramiento"
+    }
+  },
+
+  "flowAsesoramientoPequenosElectrodomesticos": {
+    "message": "En pequeños electrodomésticos tenemos cafeteras, licuadoras, aspiradoras y más productos en promoción.\n\nPara ver todos los productos, visitá: [URL_PEQUENOS_ELECTRODOMESTICOS]\n\n¿Te gustaría recibir asesoramiento personalizado? Recordá que podés escribir “Asesor” en cualquier momento.\n\nSi querés regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N), elegí una opción.",
+    "options": {
+      "S": "menuPrincipal",
+      "N": "flowAsesoramiento"
+    }
+  },
+
+  "flowAsesoramientoCuidadoPersonalSalud": {
+    "message": "En esta sección contamos con secadores, planchitas, afeitadoras, balanzas, masajeadores y más productos en promoción.\n\nPara ver todos los productos, visitá: [URL_CUIDADO_PERSONAL_SALUD]\n\n¿Te gustaría recibir asesoramiento personalizado? Recordá que podés escribir “Asesor” en cualquier momento.\n\nSi querés regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N), elegí una opción.",
+    "options": {
+      "S": "menuPrincipal",
+      "N": "flowAsesoramiento"
+    }
+  },
+
+  "flowAsesoramientoBazar": {
+    "message": "En bazar tenemos juegos de cocina, vajilla, organizadores, termos y más artículos en promoción.\n\nPara ver todos los productos, visitá: [URL_BAZAR]\n\n¿Te gustaría recibir asesoramiento personalizado? Recordá que podés escribir “Asesor” en cualquier momento.\n\nSi querés regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N), elegí una opción.",
+    "options": {
+      "S": "menuPrincipal",
+      "N": "flowAsesoramiento"
+    }
+  },
+
+  "flowAsesoramientoOtrasCategorias": {
+    "message": "Si no encontraste lo que buscás, podés visitar nuestra tienda completa y ver todas las categorías disponibles.\n\nVisitá nuestra web: [URL_TIENDA_COMPLETA]\n\nSi preferís recibir asesoramiento personalizado, escribí “Asesor” y te ayudaremos con lo que necesites.\n\nSi querés regresar al Menú Principal (S) o ver nuevamente las categorías de asesoramiento (N), elegí una opción.",
+    "options": {
+      "S": "menuPrincipal",
+      "N": "flowAsesoramiento"
     }
   }
-  
+}
