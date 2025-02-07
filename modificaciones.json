@@ -1,9 +1,50 @@
 {
-    "flowModificarCompra": {
-      "message": "Para modificar tu compra, necesitamos tu número de orden y los cambios requeridos. (Escribe cualquier texto o presiona 'm' para Menú principal).",
-      "options": {
-        "m": "menuPrincipal"
-      }
+  "flowModificarCompra": {
+    "message": "✏️ *Modificar mi compra* 🛍️\n\nPara modificar tu compra, necesitaremos algunos datos.\n\n📌 *Por favor, ingresa el número de pedido que deseas modificar.*\n\n🔙 *Escribe 'M' para volver al Menú Principal.*",
+    "options": {
+      "m": "menuPrincipal",
+      "pedido": "flowTipoModificacion"
+    }
+  },
+
+  "flowTipoModificacion": {
+    "message": "🔧 *¿Qué modificación deseas realizar?*\n\n📌 Selecciona la opción correspondiente:\n\n🗺️ A. *Corregir la dirección de envío.*\n📄 B. *Cambiar la razón social de facturación.*\n❌ C. *Cancelar la compra.*\n\n🔙 *Escribe 'M' para volver al Menú Principal.*",
+    "options": {
+      "a": "flowModificarDireccion",
+      "b": "flowModificarFactura",
+      "c": "flowConfirmarCancelacion",
+      "m": "menuPrincipal"
+    }
+  },
+
+  "flowModificarDireccion": {
+    "message": "🗺️ *Corrección de dirección de envío.*\n\n📌 *Por favor, ingresa la nueva dirección de envío completa.*\n\n📍 *Ejemplo:* Calle 123, Piso 4, Dpto B, Ciudad.\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a la selección de modificación.*",
+    "options": {
+      "m": "menuPrincipal",
+      "b": "flowTipoModificacion"
+    }
+  },
+
+  "flowModificarFactura": {
+    "message": "📄 *Cambio de Razón Social en Facturación.*\n\n📌 *Indica el producto y la cantidad que deseas modificar o agregar.*\n\n🔍 *Ejemplo:* 'Laptop x1, Teclado x2'\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a la selección de modificación.*",
+    "options": {
+      "m": "menuPrincipal",
+      "b": "flowTipoModificacion"
+    }
+  },
+
+  "flowConfirmarCancelacion": {
+    "message": "❌ *Confirmación de Cancelación de Compra.*\n\n⚠️ ¿Estás seguro/a de que deseas cancelar tu compra?\n\n🔴 *Escribe 'Sí' para confirmar o 'No' para volver al menú principal.*\n\n📌 *Ten en cuenta que pueden aplicarse condiciones y políticas de cancelación.*",
+    "options": {
+      "sí": "flowCancelacionConfirmada",
+      "no": "menuPrincipal"
+    }
+  },
+
+  "flowCancelacionConfirmada": {
+    "message": "✅ *Tu solicitud de cancelación ha sido registrada.*\n\n📩 Un asesor se comunicará contigo para confirmar y procesar la cancelación.\n✉️ También recibirás un correo con los detalles de la cancelación.\n\n🔙 *Escribe 'M' para volver al Menú Principal.*",
+    "options": {
+      "m": "menuPrincipal"
     }
   }
-  
+}

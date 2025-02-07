@@ -1,32 +1,80 @@
 {
   "flowquierocomprar": {
-    "message": "Para comprar, ingresa a nuestra web, añade productos al carrito y sigue los pasos de pago y envío. ¿Deseas más detalles?\na) Métodos de pago\nb) Costo de envío\nc) Tiempo de entrega\nm) Menú principal",
+    "message": "🛒 ¡Comprar en nuestro sitio web es rápido, fácil y seguro! \n\nPor favor, elige una opción:\n\n1️⃣ Necesito ayuda para finalizar mi compra.\n2️⃣ ¿Cuáles son las formas de pago vigentes?\n3️⃣ 📦 ¿Cómo es la forma de envío? ¿Cuánto tarda y cuál es el costo?\n4️⃣ 🛠 ¿Cómo es la Garantía de un producto?\n5️⃣ 🔄 ¿Puedo cambiar o devolver un producto?\n6️⃣ 📊 ¿Hay Stock?\n7️⃣ 📄 ¿Emiten Factura A?\n8️⃣ 🎟 ¿Cómo uso el cupón de descuento?\n\n🔙 *Escribe 'M' para volver al menú principal.*",
     "options": {
-      "a": "flowMetodosPago",
-      "b": "flowCostoEnvio",
-      "c": "flowTiempoEntrega",
+      "1": "flowAyudaCompra",
+      "2": "flowFormasPago",
+      "3": "flowEnvios",
+      "4": "flowGarantiaProducto",
+      "5": "flowCambiosDevoluciones",
+      "6": "flowStock",
+      "7": "flowFacturaA",
+      "8": "flowCuponDescuento",
       "m": "menuPrincipal"
     }
   },
 
-  "flowMetodosPago": {
-    "message": "Aceptamos tarjetas de crédito, débito y transferencias. (m) Menú principal",
+  "flowAyudaCompra": {
+    "message": "🔍 ¡Entendido! Antes de finalizar tu compra, revisa estos puntos:\n\n✅ *Verifica que todos tus datos personales, de envío y de pago sean correctos.*\n✅ *Si pagaste con tarjeta de crédito, revisa los 16 números, código de seguridad y fecha de vencimiento.*\n✅ *Si el monto es elevado, tu banco puede requerir autorización previa.*\n\n📌 *Teléfonos de consulta por problemas con el pago:*\n📞 *VISA:* (011) 4379-3400, opción 2.\n📞 *MasterCard:* Contacta a tu banco emisor.\n📞 *American Express:* Número al dorso de tu tarjeta.\n\n🎯 *Promociones bancarias aplican solo a tarjetas emitidas por dichos bancos.*\n\n👨‍💼 En breve, un asesor se pondrá en contacto contigo.\n\n🔙 *Escribe 'M' para volver al menú principal o 'B' para regresar a la sección de compra.*",
     "options": {
-      "m": "menuPrincipal"
+      "m": "menuPrincipal",
+      "b": "flowquierocomprar"
     }
   },
 
-  "flowCostoEnvio": {
-    "message": "El envío es gratuito a partir de $100 en compras. (m) Menú principal",
+  "flowFormasPago": {
+    "message": "💳 *Formas de Pago Disponibles:*\n\n✔️ Tarjetas de crédito y débito.\n✔️ Transferencias bancarias.\n✔️ Otros métodos según disponibilidad.\n\n🔗 [🔍 *Ver más detalles aquí*](https://www.tidi.com.ar/formas-de-pago)\n\n🔙 *Escribe 'M' para volver al menú principal o 'B' para regresar a la sección de compra.*",
     "options": {
-      "m": "menuPrincipal"
+      "m": "menuPrincipal",
+      "b": "flowquierocomprar"
     }
   },
 
-  "flowTiempoEntrega": {
-    "message": "Normalmente entregamos entre 2-5 días hábiles. (m) Menú principal",
+  "flowEnvios": {
+    "message": "🚚 *Opciones de Envío:*\n\n📦 *Ingresa tu código postal en la web para conocer los costos y plazos de entrega.*\n\n✅ *Opciones de envío:*\n1️⃣ Express a domicilio.\n2️⃣ Envío estándar.\n3️⃣ Retiro en sucursal del Correo.\n\n🔗 [📦 *Más información sobre envíos aquí*](https://www.tidi.com.ar/formas-y-costos-de-envio)\n\n🔙 *Escribe 'M' para volver al menú principal o 'B' para regresar a la sección de compra.*",
     "options": {
-      "m": "menuPrincipal"
+      "m": "menuPrincipal",
+      "b": "flowquierocomprar"
+    }
+  },
+
+  "flowGarantiaProducto": {
+    "message": "🛠 *Garantía de Productos Banghó:*\n\n🔧 Todos nuestros productos tienen garantía oficial de *12, 24 o 36 meses* según el modelo.\n\n🔙 *Escribe 'M' para volver al menú principal o 'B' para regresar a la sección de compra.*",
+    "options": {
+      "m": "menuPrincipal",
+      "b": "flowquierocomprar"
+    }
+  },
+
+  "flowCambiosDevoluciones": {
+    "message": "🔄 *Cambios y Devoluciones:*\n\n✔️ *Puedes cambiar o devolver tu producto siguiendo nuestros términos y condiciones.*\n\n🔗 [🔄 *Consulta las políticas aquí*](https://www.tidi.com.ar/cambios-y-devoluciones)\n\n🔙 *Escribe 'M' para volver al menú principal o 'B' para regresar a la sección de compra.*",
+    "options": {
+      "m": "menuPrincipal",
+      "b": "flowquierocomprar"
+    }
+  },
+
+  "flowStock": {
+    "message": "📊 *Disponibilidad de Stock:*\n\n✔️ *Los productos disponibles en nuestra web tienen stock.*\n⚠️ *Si un producto se agota, aparecerá la leyenda 'Producto sin stock'.*\n📩 *Puedes ingresar tu correo para recibir una notificación cuando vuelva a estar disponible.*\n\n🔙 *Escribe 'M' para volver al menú principal o 'B' para regresar a la sección de compra.*",
+    "options": {
+      "m": "menuPrincipal",
+      "b": "flowquierocomprar"
+    }
+  },
+
+  "flowFacturaA": {
+    "message": "📄 *Factura A:*\n\n✔️ Emitimos Factura A.\n🔢 *Ingresa tu CUIT y Razón Social al completar la compra.*\n\n🔙 *Escribe 'M' para volver al menú principal o 'B' para regresar a la sección de compra.*",
+    "options": {
+      "m": "menuPrincipal",
+      "b": "flowquierocomprar"
+    }
+  },
+
+  "flowCuponDescuento": {
+    "message": "🎟 *Uso de Cupones de Descuento:*\n\n✔️ *Aplica tu cupón en el carrito de compras en la sección '¿Tienes un cupón de descuento?'.*\n🔍 *Verifica vigencia y productos aplicables antes de usarlo.*\n\n🔙 *Escribe 'M' para volver al menú principal o 'B' para regresar a la sección de compra.*",
+    "options": {
+      "m": "menuPrincipal",
+      "b": "flowquierocomprar"
     }
   }
 }
