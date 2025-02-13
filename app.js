@@ -44,21 +44,20 @@ async function loadFlows() {
  * @param {string} text - El texto a mostrar.
  * @param {array} images - Lista de imágenes a mostrar.
  * @param {array} buttons - Lista de botones con `text` y `url`.
+ * @param {string} followUp - Mensaje adicional para seguir con la conversación.
  */
-function appendMessage(sender, text, images = [], buttons = []) {
+function appendMessage(sender, text, images = [], buttons = [], followUp = null) {
   const msgDiv = document.createElement("div");
   msgDiv.classList.add(sender === "bot" ? "bot-message" : "user-message");
 
   let htmlContent = `<p>${text.replace(/\n/g, "<br>")}</p>`;
 
-  // Si hay imágenes, agregarlas
   if (images.length > 0) {
     images.forEach(imgSrc => {
       htmlContent += `<img src="${imgSrc}" class="promo-image" alt="Promoción">`;
     });
   }
 
-  // Si hay botones, agregarlos como enlaces HTML clickeables
   if (buttons.length > 0) {
     buttons.forEach(button => {
       htmlContent += `<p><a href="${button.url}" target="_blank" class="button">${button.text}</a></p>`;
@@ -68,6 +67,10 @@ function appendMessage(sender, text, images = [], buttons = []) {
   msgDiv.innerHTML = htmlContent;
   chatWindow.appendChild(msgDiv);
   chatWindow.scrollTop = chatWindow.scrollHeight;
+
+  if (followUp) {
+    setTimeout(() => appendMessage("bot", followUp), 500);
+  }
 }
 
 /**
@@ -120,11 +123,12 @@ function handleUserInput() {
     if (nextFlowKey && botFlows[nextFlowKey]) {
       currentFlow = nextFlowKey;
       
-      // Extraer los botones del siguiente flujo, si existen
+      // Extraer los botones y el mensaje de seguimiento del nuevo flujo, si existen
       const buttons = botFlows[currentFlow].buttons || [];
+      const followUp = botFlows[currentFlow].followUp || null;
 
-      // Mostrar el mensaje del nuevo flujo con sus botones
-      appendMessage("bot", botFlows[currentFlow].message, [], buttons);
+      // Mostrar el mensaje del nuevo flujo con sus botones y mensaje adicional si aplica
+      appendMessage("bot", botFlows[currentFlow].message, [], buttons, followUp);
     } else {
       appendMessage("bot", "No entendí esa opción. Por favor, intenta de nuevo.");
     }
