@@ -1,42 +1,121 @@
 {
   "flowPromociones": {
-    "message": "🎉 ¡Descubre nuestras promociones vigentes! 🛍️\n\n📸 Mira nuestras ofertas destacadas:",
+    "message": "💥 ¡Promociones exclusivas de la semana! 🛍️\n\n🎯 Elige qué tipo de promoción te interesa:\n\n1️⃣ Descuentos en productos\n2️⃣ Cuotas sin interés\n3️⃣ Combos especiales\n4️⃣ Envío gratis\n\n🔙 Escribe 'M' para volver al menú principal.",
+    "options": {
+      "1": "flowPromocionesDescuentos",
+      "2": "flowPromocionesCuotas",
+      "3": "flowPromocionesCombos",
+      "4": "flowPromocionesEnvios",
+      "m": "menuPrincipal"
+    }
+  },
+
+  "flowPromocionesDescuentos": {
+    "message": "🎉 ¡Mirá estas increíbles ofertas con descuento! 📉",
     "images": [
       "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/7b3ac4c8-c3ec-4e25-8d84-8c182dd7ddd6___4c2931f9c03f0155b254a2c5d485d2d4.jpg",
-      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/1b18180d-6f70-48f4-88b8-564f2b08da26___67a90242011886b8b8bd37bd7a6f387c.jpg",
-      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/3fdf2208-927c-4730-bc7e-923bcac0c332___e20f73d6a754d44cd20e099a36627fcc.jpg"
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/1b18180d-6f70-48f4-88b8-564f2b08da26___67a90242011886b8b8bd37bd7a6f387c.jpg"
     ],
     "additionalMessages": [
       {
-        "message": "🛒 Para ver todas las promociones disponibles, haz clic en el siguiente botón:"
+        "message": "🛒 Para ver más productos con descuento, haz clic aquí:"
       },
       {
         "buttons": [
           {
-            "text": "🔗 Ver todas las promociones",
-            "url": "https://www.tidi.com.ar/promociones"
+            "text": "🔗 Ver más descuentos",
+            "url": "https://www.tidi.com.ar/promociones/descuentos"
           }
         ]
       },
       {
-        "message": "💡 Opciones adicionales:\n1️⃣ Quiero recibir notificaciones de promociones.\n\n🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a Promociones."
+        "message": "🔙 Escribe 'asesor' para hablar con un agente o 'M' para volver al menú principal."
       }
     ],
     "options": {
-      "1": "flowPromocionesSuscripcion",
       "asesor": "flowAsesor",
-      "m": "menuPrincipal",
-      "b": "flowPromociones"
+      "m": "menuPrincipal"
     }
   },
 
-  "flowPromocionesSuscripcion": {
-    "message": "📩 ¡Genial! 🎉 Para suscribirte a nuestras promociones, por favor ingresa tu correo electrónico.\n\n✉️ Ejemplo: miemail@correo.com",
-    "followUp": "🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a Promociones.",
+  "flowPromocionesCuotas": {
+    "message": "💳 ¡Comprá en cuotas sin interés! ✅",
+    "images": [
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/3fdf2208-927c-4730-bc7e-923bcac0c332___e20f73d6a754d44cd20e099a36627fcc.jpg"
+    ],
+    "additionalMessages": [
+      {
+        "message": "🛒 Para conocer todas las opciones de cuotas, haz clic aquí:"
+      },
+      {
+        "buttons": [
+          {
+            "text": "🔗 Ver cuotas sin interés",
+            "url": "https://www.tidi.com.ar/promociones/cuotas"
+          }
+        ]
+      },
+      {
+        "message": "🔙 Escribe 'asesor' para hablar con un agente o 'M' para volver al menú principal."
+      }
+    ],
     "options": {
       "asesor": "flowAsesor",
-      "m": "menuPrincipal",
-      "b": "flowPromociones"
+      "m": "menuPrincipal"
+    }
+  },
+
+  "flowPromocionesCombos": {
+    "message": "🛍️ ¡Aprovechá estos combos especiales! 🎁",
+    "images": [
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/1b18180d-6f70-48f4-88b8-564f2b08da26___67a90242011886b8b8bd37bd7a6f387c.jpg"
+    ],
+    "additionalMessages": [
+      {
+        "message": "🛒 Para ver más combos, haz clic aquí:"
+      },
+      {
+        "buttons": [
+          {
+            "text": "🔗 Ver combos especiales",
+            "url": "https://www.tidi.com.ar/promociones/combos"
+          }
+        ]
+      },
+      {
+        "message": "🔙 Escribe 'asesor' para hablar con un agente o 'M' para volver al menú principal."
+      }
+    ],
+    "options": {
+      "asesor": "flowAsesor",
+      "m": "menuPrincipal"
+    }
+  },
+
+  "flowPromocionesEnvios": {
+    "message": "🚚 ¡Envío gratis en productos seleccionados! 📦",
+    "images": [
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/3fdf2208-927c-4730-bc7e-923bcac0c332___e20f73d6a754d44cd20e099a36627fcc.jpg"
+    ],
+    "additionalMessages": [
+      {
+        "message": "🛒 Consulta los productos con envío gratis aquí:"
+      },
+      {
+        "buttons": [
+          {
+            "text": "🔗 Ver envío gratis",
+            "url": "https://www.tidi.com.ar/promociones/envio-gratis"
+          }
+        ]
+      },
+      {
+        "message": "🔙 Escribe 'asesor' para hablar con un agente o 'M' para volver al menú principal."
+      }
+    ],
+    "options": {
+      "asesor": "flowAsesor",
+      "m": "menuPrincipal"
     }
   },
 

@@ -138,3 +138,12 @@ body {
 .button:hover {
   background-color: #0056b3;
 }
+
+.promo-image {
+  width: 100%;
+  max-width: 320px; /* Permitir más flexibilidad */
+  height: auto; /* Ajuste automático */
+  border-radius: 10px;
+  margin-top: 10px;
+  display: block; /* Asegurar que sean elementos visibles */
+}
