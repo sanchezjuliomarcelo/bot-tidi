@@ -89,6 +89,15 @@ function handleUserInput() {
     return;
   }
 
+  // Lógica específica para el flujo de asesoramiento
+  if (currentFlow.startsWith("flowAsesoramiento")) {
+    if (!botFlows[currentFlow].options[input] && input.length > 3) {
+      currentFlow = "flowAsesor";
+      appendMessage("bot", botFlows[currentFlow].message);
+      return;
+    }
+  }
+
   // Si el usuario está ingresando una fecha en el flujo de reclamos
   if (currentFlow === "flowRegistrarReclamoFecha") {
     if (isValidDate(input)) {
@@ -153,7 +162,6 @@ function isValidDate(dateString) {
   const [day, month, year] = dateString.split("/").map(Number);
   const date = new Date(year, month - 1, day);
 
-  // Verificar que la fecha sea válida y que el mes/día no estén fuera de rango
   return date instanceof Date && !isNaN(date) && date.getDate() === day && date.getMonth() === month - 1;
 }
 

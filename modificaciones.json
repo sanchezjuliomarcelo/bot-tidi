@@ -1,50 +1,67 @@
 {
   "flowModificarCompra": {
-    "message": "✏️ *Modificar mi compra* 🛍️\n\nPara modificar tu compra, necesitaremos algunos datos.\n\n📌 *Por favor, ingresa el número de pedido que deseas modificar.*\n\n🔙 *Escribe 'M' para volver al Menú Principal.*",
+    "message": "✏️ Modificar mi compra 🛍️\n\nPara modificar tu compra, necesitaremos algunos datos.\n\n📌 Ingresa el número de pedido que deseas modificar.",
+    "followUp": "🔙 Escribe el número de pedido o 'asesor' para que te derivemos con un agente. También puedes escribir 'M' para volver al menú principal.",
     "options": {
-      "m": "menuPrincipal",
-      "pedido": "flowTipoModificacion"
-    }
+      "asesor": "flowAsesor",
+      "m": "menuPrincipal"
+    },
+    "dynamicInput": "flowTipoModificacion"
   },
 
   "flowTipoModificacion": {
-    "message": "🔧 *¿Qué modificación deseas realizar?*\n\n📌 Selecciona la opción correspondiente:\n\n🗺️ A. *Corregir la dirección de envío.*\n📄 B. *Cambiar la razón social de facturación.*\n❌ C. *Cancelar la compra.*\n\n🔙 *Escribe 'M' para volver al Menú Principal.*",
+    "message": "🔧 ¿Qué modificación deseas realizar?\n\n📌 Selecciona la opción correspondiente:\n\n🗺️ A. Corregir la dirección de envío.\n📄 B. Cambiar la razón social de facturación.\n❌ C. Cancelar la compra.",
+    "followUp": "🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal.",
     "options": {
       "a": "flowModificarDireccion",
       "b": "flowModificarFactura",
       "c": "flowConfirmarCancelacion",
+      "asesor": "flowAsesor",
       "m": "menuPrincipal"
     }
   },
 
   "flowModificarDireccion": {
-    "message": "🗺️ *Corrección de dirección de envío.*\n\n📌 *Por favor, ingresa la nueva dirección de envío completa.*\n\n📍 *Ejemplo:* Calle 123, Piso 4, Dpto B, Ciudad.\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a la selección de modificación.*",
+    "message": "🗺️ Corrección de dirección de envío.\n\n📌 Ingresa la nueva dirección de envío completa.",
+    "followUp": "📍 Ejemplo: Calle 123, Piso 4, Dpto B, Ciudad.\n\n🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a la selección de modificación.",
     "options": {
+      "asesor": "flowAsesor",
       "m": "menuPrincipal",
       "b": "flowTipoModificacion"
     }
   },
 
   "flowModificarFactura": {
-    "message": "📄 *Cambio de Razón Social en Facturación.*\n\n📌 *Indica el producto y la cantidad que deseas modificar o agregar.*\n\n🔍 *Ejemplo:* 'Laptop x1, Teclado x2'\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a la selección de modificación.*",
+    "message": "📄 Cambio de Razón Social en Facturación.\n\n📌 Ingresa la nueva Razón Social y CUIT que deseas utilizar.",
+    "followUp": "🔍 Ejemplo: Razón Social: Empresa S.A. - CUIT: 30-12345678-9\n\n🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a la selección de modificación.",
     "options": {
+      "asesor": "flowAsesor",
       "m": "menuPrincipal",
       "b": "flowTipoModificacion"
     }
   },
 
   "flowConfirmarCancelacion": {
-    "message": "❌ *Confirmación de Cancelación de Compra.*\n\n⚠️ ¿Estás seguro/a de que deseas cancelar tu compra?\n\n🔴 *Escribe 'Sí' para confirmar o 'No' para volver al menú principal.*\n\n📌 *Ten en cuenta que pueden aplicarse condiciones y políticas de cancelación.*",
+    "message": "❌ Confirmación de Cancelación de Compra.\n\n⚠️ ¿Estás seguro/a de que deseas cancelar tu compra?\n\n🔴 Escribe 'Sí' para confirmar o 'No' para volver al menú principal.",
+    "followUp": "📌 Ten en cuenta que pueden aplicarse condiciones y políticas de cancelación.\n\n🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal.",
     "options": {
       "sí": "flowCancelacionConfirmada",
-      "no": "menuPrincipal"
+      "no": "menuPrincipal",
+      "asesor": "flowAsesor",
+      "m": "menuPrincipal"
     }
   },
 
   "flowCancelacionConfirmada": {
-    "message": "✅ *Tu solicitud de cancelación ha sido registrada.*\n\n📩 Un asesor se comunicará contigo para confirmar y procesar la cancelación.\n✉️ También recibirás un correo con los detalles de la cancelación.\n\n🔙 *Escribe 'M' para volver al Menú Principal.*",
+    "message": "✅ Tu solicitud de cancelación ha sido registrada.\n\n📩 Un asesor se comunicará contigo para confirmar y procesar la cancelación.\n✉️ También recibirás un correo con los detalles de la cancelación.",
+    "followUp": "🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal.",
     "options": {
+      "asesor": "flowAsesor",
       "m": "menuPrincipal"
     }
+  },
+
+  "flowAsesor": {
+    "message": "👨‍💼 Te estamos derivando con un agente. Por favor, aguarda un momento."
   }
 }

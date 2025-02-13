@@ -1,6 +1,6 @@
 {
   "flowGarantias": {
-    "message": "🛠️ *Gestión de Garantías* 📦\n\n¡Entendido! Vamos a ayudarte con tu consulta sobre garantía.\n\n📌 *Por favor, elige una opción:*\n\n📄 A. *Consultar políticas de garantía.*\n📋 B. *Registrar un reclamo.*\n🔍 C. *Consultar el estado de un reclamo.*\n\n🔙 *Escribe 'M' para volver al Menú Principal.*",
+    "message": "🛠️ Gestión de Garantías 📦\n\n¡Entendido! Vamos a ayudarte con tu consulta sobre garantía.\n\n📌 Por favor, elige una opción:\n\n📄 A. Consultar políticas de garantía.\n📋 B. Registrar un reclamo.\n🔍 C. Consultar el estado de un reclamo.\n\n🔙 Escribe 'M' para volver al Menú Principal.",
     "options": {
       "a": "flowPoliticasGarantia",
       "b": "flowRegistrarReclamoFecha",
@@ -9,17 +9,25 @@
     }
   },
 
-  "flowPoliticasGarantia": {
-    "message": "📄 *Políticas de Garantía.*\n\nNuestra garantía cubre defectos de fabricación y fallas propias del producto.\n\n🔗 [📜 *Consulta los detalles completos aquí*](https://www.tidi.com.ar/cambios-y-devoluciones)\n\n👨‍💼 *Si necesitas más información, escribe 'Asesor' para hablar con un representante.*\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a Garantías.*",
-    "options": {
-      "m": "menuPrincipal",
-      "b": "flowGarantias",
-      "asesor": "flowAsesor"
+"flowPoliticasGarantia": {
+  "message": "📄 Políticas de Garantía.\n\nNuestra garantía cubre defectos de fabricación y fallas propias del producto.",
+  "buttons": [
+    {
+      "text": "📜 Consulta los detalles completos aquí",
+      "url": "https://www.tidi.com.ar/cambios-y-devoluciones"
     }
+  ],
+  "followUp": "👨‍💼 Si necesitas más información, escribe 'Asesor' para hablar con un representante.\n\n🔙 Escribe 'M' para volver al Menú Principal o 'B' para regresar a Garantías.",
+  "options": {
+    "m": "menuPrincipal",
+    "b": "flowGarantias",
+    "asesor": "flowAsesor"
+  }
+
   },
 
   "flowRegistrarReclamoFecha": {
-    "message": "📅 *Registro de Reclamo de Garantía.*\n\nPara determinar si tu producto aplica para DOA o garantía posventa, necesitamos saber la fecha en la que lo recibiste.\n\n📌 *Por favor, ingresa la fecha de recepción del producto en formato DD/MM/AAAA.*",
+    "message": "📅 Registro de Reclamo de Garantía.\n\nPara determinar si tu producto aplica para DOA o garantía posventa, necesitamos saber la fecha en la que lo recibiste.\n\n📌 *Por favor, ingresa la fecha de recepción del producto en formato DD/MM/AAAA.*",
     "options": {
       "m": "menuPrincipal",
       "b": "flowGarantias"
@@ -27,7 +35,7 @@
   },
 
   "flowDOA": {
-    "message": "🚨 *Producto dentro del período DOA (Dead on Arrival)*\n\nTu producto fue recibido hace menos de 10 días. Para estos casos, la gestión se realiza a través del canal comercial.\n\n📌 Por favor, contactate con nuestro equipo de ventas para resolver tu caso rápidamente.\n\n📞 *Teléfono:* +54 11 XXXX-XXXX\n📧 *Email:* ventas@tidi.com.ar\n\n🔙 *Escribe 'M' para volver al Menú Principal.*",
+    "message": "🚨 *Producto dentro del período DOA (Dead on Arrival)*\n\nTu producto fue recibido hace menos de 10 días. Para estos casos, la gestión se realiza a través del canal comercial.\n\n📌 Te derivaremos con nuestro equipo de ventas para resolver tu caso rápidamente.\n\n📞 tambien podes comunicarte Teléfonicamente: 0810-888-3444\n📧 Email: ventas@tidi.com.ar\n\n🔙 *Escribe 'M' para volver al Menú Principal.*",
     "options": {
       "m": "menuPrincipal"
     }
@@ -42,7 +50,7 @@
   },
 
   "flowGarantiaPosventaRegistro": {
-    "message": "📝 *Registro de Garantía Posventa.*\n\n📌 *Por favor, ingresa los siguientes datos:* \n\n👤 *Nombre completo.*\n🆔 *DNI.*\n✉️ *Correo electrónico.*\n📦 *Producto (nombre o código).* \n\nUna vez recibida esta información, uno de nuestros asesores te contactará para continuar con el proceso.",
+    "message": "📝 Registro de Garantía Posventa.\n\n📌 Por favor, ingresa los siguientes datos: \n\n👤 Nombre completo.\n🆔 DNI.\n✉️ Correo electrónico.\n📦 Producto (nombre o código). \n\nUna vez recibida esta información, uno de nuestros asesores te contactará para continuar con el proceso.",
     "options": {
       "m": "menuPrincipal",
       "b": "flowGarantias"
@@ -50,7 +58,7 @@
   },
 
   "flowEstadoReclamo": {
-    "message": "🔍 *Consulta de Estado de Reclamo.*\n\n📌 *Por favor, ingresa el número de reclamo o el número de pedido asociado a tu solicitud.*\n\nTe informaremos el estado actual de tu trámite.\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a Garantías.*",
+    "message": "🔍 Consulta de Estado de Reclamo.\n\n📌 Por favor, ingresa el número de reclamo o el número de pedido asociado a tu solicitud.\n\nTe informaremos el estado actual de tu trámite.\n\n🔙 Escribe 'M' para volver al Menú Principal o 'B' para regresar a Garantías.",
     "options": {
       "m": "menuPrincipal",
       "b": "flowGarantias"
