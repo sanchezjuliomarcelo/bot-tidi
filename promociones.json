@@ -1,28 +1,37 @@
 {
   "flowPromociones": {
-    "message": "🎉 *¡Descubre nuestras promociones vigentes!* 🛍️\n\n📸 *Mira nuestras ofertas destacadas:*",
+    "message": "🎉 ¡Descubre nuestras promociones vigentes! 🛍️\n\n📸 Mira nuestras ofertas destacadas:",
     "images": [
       "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/7b3ac4c8-c3ec-4e25-8d84-8c182dd7ddd6___4c2931f9c03f0155b254a2c5d485d2d4.jpg",
       "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/1b18180d-6f70-48f4-88b8-564f2b08da26___67a90242011886b8b8bd37bd7a6f387c.jpg",
       "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/3fdf2208-927c-4730-bc7e-923bcac0c332___e20f73d6a754d44cd20e099a36627fcc.jpg"
     ],
-    "link": {
-      "text": "🛒 🔗 Ver todas las promociones aquí",
-      "url": "https://www.tidi.com.ar/promociones"
-    },
+    "buttons": [
+      {
+        "text": "🛒 Ver todas las promociones aquí",
+        "url": "https://www.tidi.com.ar/promociones"
+      }
+    ],
+    "followUp": "💡 Opciones adicionales:\n1️⃣ Quiero recibir notificaciones de promociones.\n🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a Promociones.",
     "options": {
       "1": "flowPromocionesSuscripcion",
-      "m": "menuPrincipal",
-      "b": "flowPromociones"
-    },
-    "optionsText": "💡 *Opciones adicionales:*\n1️⃣ *Quiero recibir notificaciones de promociones.*\n🔙 Escribe 'M' para volver al Menú Principal o 'B' para regresar a Promociones."
-  },
-
-  "flowPromocionesSuscripcion": {
-    "message": "📩 ¡Genial! 🎉 Para suscribirte a nuestras promociones, por favor ingresa tu correo electrónico.\n\n✉️ Ejemplo: _miemail@correo.com_\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a Promociones.",
-    "options": {
+      "asesor": "flowAsesor",
       "m": "menuPrincipal",
       "b": "flowPromociones"
     }
+  },
+
+  "flowPromocionesSuscripcion": {
+    "message": "📩 ¡Genial! 🎉 Para suscribirte a nuestras promociones, por favor ingresa tu correo electrónico.\n\n✉️ Ejemplo: _miemail@correo.com_",
+    "followUp": "🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a Promociones.",
+    "options": {
+      "asesor": "flowAsesor",
+      "m": "menuPrincipal",
+      "b": "flowPromociones"
+    }
+  },
+
+  "flowAsesor": {
+    "message": "👨‍💼 Te estamos derivando con un agente. Por favor, aguarda un momento."
   }
 }
