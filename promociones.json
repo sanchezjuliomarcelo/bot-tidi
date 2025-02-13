@@ -6,13 +6,22 @@
       "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/1b18180d-6f70-48f4-88b8-564f2b08da26___67a90242011886b8b8bd37bd7a6f387c.jpg",
       "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/3fdf2208-927c-4730-bc7e-923bcac0c332___e20f73d6a754d44cd20e099a36627fcc.jpg"
     ],
-    "buttons": [
+    "additionalMessages": [
       {
-        "text": "🛒 Ver todas las promociones aquí",
-        "url": "https://www.tidi.com.ar/promociones"
+        "message": "🛒 Para ver todas las promociones disponibles, haz clic en el siguiente botón:"
+      },
+      {
+        "buttons": [
+          {
+            "text": "🔗 Ver todas las promociones",
+            "url": "https://www.tidi.com.ar/promociones"
+          }
+        ]
+      },
+      {
+        "message": "💡 Opciones adicionales:\n1️⃣ Quiero recibir notificaciones de promociones.\n\n🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a Promociones."
       }
     ],
-    "followUp": "💡 Opciones adicionales:\n1️⃣ Quiero recibir notificaciones de promociones.\n🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a Promociones.",
     "options": {
       "1": "flowPromocionesSuscripcion",
       "asesor": "flowAsesor",
@@ -22,7 +31,7 @@
   },
 
   "flowPromocionesSuscripcion": {
-    "message": "📩 ¡Genial! 🎉 Para suscribirte a nuestras promociones, por favor ingresa tu correo electrónico.\n\n✉️ Ejemplo: _miemail@correo.com_",
+    "message": "📩 ¡Genial! 🎉 Para suscribirte a nuestras promociones, por favor ingresa tu correo electrónico.\n\n✉️ Ejemplo: miemail@correo.com",
     "followUp": "🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a Promociones.",
     "options": {
       "asesor": "flowAsesor",
