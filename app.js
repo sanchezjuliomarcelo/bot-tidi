@@ -72,7 +72,7 @@ function appendMessage(sender, text, images = [], link = null) {
  * Maneja el input del usuario y la navegación entre flujos.
  */
 function handleUserInput() {
-  const input = userInput.value.trim().toUpperCase(); // Convertimos a mayúsculas
+  const input = userInput.value.trim().toUpperCase();
   if (!input) return;
 
   appendMessage("user", input);
@@ -84,6 +84,26 @@ function handleUserInput() {
     return;
   }
 
+  // Si el usuario está ingresando una fecha en el flujo de reclamos
+  if (currentFlow === "flowRegistrarReclamoFecha") {
+    if (isValidDate(input)) {
+      const diasDesdeRecepcion = calculateDaysSince(input);
+
+      if (diasDesdeRecepcion <= 10) {
+        currentFlow = "flowDOA"; // Producto dentro de DOA
+      } else {
+        currentFlow = "flowGarantiaPosventaMarcas"; // Producto va a Garantía Posventa
+      }
+
+      appendMessage("bot", botFlows[currentFlow].message);
+    } else {
+      appendMessage("bot", "⚠️ *Formato incorrecto.* Por favor, ingresá la fecha en formato DD/MM/AAAA.");
+    }
+    userInput.value = "";
+    return;
+  }
+
+  // Manejo de flujos estándar
   const flowConfig = botFlows[currentFlow];
 
   if (flowConfig.options) {
@@ -97,19 +117,7 @@ function handleUserInput() {
 
     if (nextFlowKey && botFlows[nextFlowKey]) {
       currentFlow = nextFlowKey;
-
-      // Si es el flujo de promociones, cargar imágenes y link
-      if (currentFlow === "flowPromociones") {
-        const promoData = botFlows[currentFlow];
-        appendMessage(
-          "bot",
-          promoData.message,
-          promoData.images || [], // Asegurar que images no sea undefined
-          promoData.link || null  // Asegurar que link no sea undefined
-        );
-      } else {
-        appendMessage("bot", botFlows[currentFlow].message);
-      }
+      appendMessage("bot", botFlows[currentFlow].message);
     } else {
       appendMessage("bot", "No entendí esa opción. Por favor, intenta de nuevo.");
     }
@@ -120,6 +128,36 @@ function handleUserInput() {
   }
 
   userInput.value = "";
+}
+
+/**
+ * Verifica si una fecha ingresada tiene un formato válido (DD/MM/AAAA)
+ * @param {string} dateString - Fecha en formato string.
+ * @returns {boolean} - True si es válida, False si no.
+ */
+function isValidDate(dateString) {
+  const regex = /^\d{2}\/\d{2}\/\d{4}$/;
+  if (!dateString.match(regex)) return false;
+
+  const [day, month, year] = dateString.split("/").map(Number);
+  const date = new Date(year, month - 1, day);
+
+  // Verificar que la fecha sea válida y que el mes/día no estén fuera de rango
+  return date instanceof Date && !isNaN(date) && date.getDate() === day && date.getMonth() === month - 1;
+}
+
+/**
+ * Calcula cuántos días han pasado desde una fecha dada hasta hoy.
+ * @param {string} dateString - Fecha en formato DD/MM/AAAA.
+ * @returns {number} - Días transcurridos desde esa fecha hasta hoy.
+ */
+function calculateDaysSince(dateString) {
+  const [day, month, year] = dateString.split("/").map(Number);
+  const receivedDate = new Date(year, month - 1, day);
+  const today = new Date();
+
+  const diffTime = today - receivedDate;
+  return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 }
 
 // Llamar a la función de carga al inicio

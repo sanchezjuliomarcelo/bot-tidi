@@ -1,6 +1,6 @@
 {
   "flowAsesoramiento": {
-    "message": "🤖 Asesoramiento de Productos 🛒\n\n📌 ¿Sobre qué tipo de producto necesitas asesoramiento?\n\n💻 1️⃣ Informática y Celulares.\n🔌 2️⃣ Electrodomésticos.\n📺 3️⃣ TV y Audio.\n🏋️ 4️⃣ Deportes y Tiempo Libre.\n☕ 5️⃣ Pequeños Electrodomésticos.\n💆 6️⃣ Cuidado Personal y Salud.\n🍽️ 7️⃣ Bazar.\n🛍️ 8️⃣ Otras Categorías.\n\n🆕 Si ya tienes un producto específico en mente, ingresa el nombre o código.\n\n🔙 Escribe 'M' para volver al Menú Principal.",
+    "message": "🤖 Asesoramiento de Productos 🛒\n\n📌 ¿Sobre qué tipo de producto necesitas asesoramiento?\n\n💻 1️⃣ Informática y Celulares.\n🔌 2️⃣ Electrodomésticos.\n📺 3️⃣ TV y Audio.\n🏋️ 4️⃣ Deportes y Tiempo Libre.\n☕ 5️⃣ Pequeños Electrodomésticos.\n💆 6️⃣ Cuidado Personal y Salud.\n🍽️ 7️⃣ Bazar.\n🛍️ 8️⃣ Otras Categorías.\n\n🆕 Si ya tienes un producto específico en mente, ingresa el nombre o código.",
     "options": {
       "1": "flowAsesoramientoInformaticaCelulares",
       "2": "flowAsesoramientoElectrodomesticos",
@@ -15,7 +15,13 @@
   },
 
   "flowAsesoramientoInformaticaCelulares": {
-    "message": "💻 *Informática y Celulares.*\n\n📌 *Encuentra laptops, PCs de escritorio, tablets, smartphones y accesorios en promoción.*\n\n🔗 [🛒 *Ver productos aquí*](URL_INFORMATICA_CELULARES)\n\n👨‍💼 *Si necesitas ayuda personalizada, escribe 'Asesor'.*\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a las categorías de asesoramiento.*",
+    "message": "💻 Informática y Celulares.\n\n📌 Encuentra laptops, PCs de escritorio, tablets, smartphones y accesorios en promoción.",
+    "buttons": [
+      {
+        "text": "🛒 Ver productos aquí",
+        "url": "https://www.tidi.com.ar/informatica-y-celulares"
+      }
+    ],
     "options": {
       "m": "menuPrincipal",
       "b": "flowAsesoramiento",
@@ -24,7 +30,13 @@
   },
 
   "flowAsesoramientoElectrodomesticos": {
-    "message": "🔌 *Electrodomésticos.*\n\n📌 *Disponemos de refrigeradores, lavadoras, cocinas y más en promoción.*\n\n🔗 [🛒 *Ver productos aquí*](URL_ELECTRODOMESTICOS)\n\n👨‍💼 *Si necesitas ayuda personalizada, escribe 'Asesor'.*\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a las categorías de asesoramiento.*",
+    "message": "🔌 Electrodomésticos.\n\n📌 Disponemos de refrigeradores, lavadoras, cocinas y más en promoción.",
+    "buttons": [
+      {
+        "text": "🛒 Ver productos aquí",
+        "url": "https://www.tidi.com.ar/electrodomesticos"
+      }
+    ],
     "options": {
       "m": "menuPrincipal",
       "b": "flowAsesoramiento",
@@ -33,7 +45,13 @@
   },
 
   "flowAsesoramientoTVAudio": {
-    "message": "📺 *TV y Audio.*\n\n📌 *Explora televisores, barras de sonido y parlantes en promoción.*\n\n🔗 [🛒 *Ver productos aquí*](URL_TV_AUDIO)\n\n👨‍💼 *Si necesitas ayuda personalizada, escribe 'Asesor'.*\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a las categorías de asesoramiento.*",
+    "message": "📺 TV y Audio.\n\n📌 Explora televisores, barras de sonido y parlantes en promoción.",
+    "buttons": [
+      {
+        "text": "🛒 Ver productos aquí",
+        "url": "https://www.tidi.com.ar/tv-y-audio"
+      }
+    ],
     "options": {
       "m": "menuPrincipal",
       "b": "flowAsesoramiento",
@@ -42,7 +60,13 @@
   },
 
   "flowAsesoramientoDeportes": {
-    "message": "🏋️ *Deportes y Tiempo Libre.*\n\n📌 *Encuentra bicicletas, cintas para correr, monopatines eléctricos y más.*\n\n🔗 [🛒 *Ver productos aquí*](URL_DEPORTES)\n\n👨‍💼 *Si necesitas ayuda personalizada, escribe 'Asesor'.*\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a las categorías de asesoramiento.*",
+    "message": "🏋️ Deportes y Tiempo Libre.\n\n📌 Encuentra bicicletas, cintas para correr, monopatines eléctricos y más.",
+    "buttons": [
+      {
+        "text": "🛒 Ver productos aquí",
+        "url": "https://www.tidi.com.ar/deportes-y-tiempo-libre"
+      }
+    ],
     "options": {
       "m": "menuPrincipal",
       "b": "flowAsesoramiento",
@@ -51,7 +75,13 @@
   },
 
   "flowAsesoramientoPequenosElectrodomesticos": {
-    "message": "☕ *Pequeños Electrodomésticos.*\n\n📌 *Disponemos de cafeteras, licuadoras, aspiradoras y más en promoción.*\n\n🔗 [🛒 *Ver productos aquí*](URL_PEQUENOS_ELECTRODOMESTICOS)\n\n👨‍💼 *Si necesitas ayuda personalizada, escribe 'Asesor'.*\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a las categorías de asesoramiento.*",
+    "message": "☕ Pequeños Electrodomésticos.\n\n📌 Disponemos de cafeteras, licuadoras, aspiradoras y más en promoción.",
+    "buttons": [
+      {
+        "text": "🛒 Ver productos aquí",
+        "url": "https://www.tidi.com.ar/peque%C3%B1os-electrodomesticos"
+      }
+    ],
     "options": {
       "m": "menuPrincipal",
       "b": "flowAsesoramiento",
@@ -60,7 +90,13 @@
   },
 
   "flowAsesoramientoCuidadoPersonalSalud": {
-    "message": "💆 *Cuidado Personal y Salud.*\n\n📌 *Disponemos de secadores, planchitas, afeitadoras y más.*\n\n🔗 [🛒 *Ver productos aquí*](URL_CUIDADO_PERSONAL_SALUD)\n\n👨‍💼 *Si necesitas ayuda personalizada, escribe 'Asesor'.*\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a las categorías de asesoramiento.*",
+    "message": "💆 Cuidado Personal y Salud.\n\n📌 Disponemos de secadores, planchitas, afeitadoras y más.",
+    "buttons": [
+      {
+        "text": "🛒 Ver productos aquí",
+        "url": "https://www.tidi.com.ar/cuidado-personal-y-salud"
+      }
+    ],
     "options": {
       "m": "menuPrincipal",
       "b": "flowAsesoramiento",
@@ -69,7 +105,13 @@
   },
 
   "flowAsesoramientoBazar": {
-    "message": "🍽️ *Bazar.*\n\n📌 *Encuentra vajilla, organizadores, termos y más artículos.*\n\n🔗 [🛒 *Ver productos aquí*](URL_BAZAR)\n\n👨‍💼 *Si necesitas ayuda personalizada, escribe 'Asesor'.*\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a las categorías de asesoramiento.*",
+    "message": "🍽️ Bazar.\n\n📌 Encuentra vajilla, organizadores, termos y más artículos.",
+    "buttons": [
+      {
+        "text": "🛒 Ver productos aquí",
+        "url": "https://www.tidi.com.ar/bazar"
+      }
+    ],
     "options": {
       "m": "menuPrincipal",
       "b": "flowAsesoramiento",
@@ -78,7 +120,13 @@
   },
 
   "flowAsesoramientoOtrasCategorias": {
-    "message": "🛍️ *Otras Categorías.*\n\n📌 *Si no encontraste lo que buscas, visita nuestra tienda completa.*\n\n🔗 [🛒 *Ver todas las categorías aquí*](URL_TIENDA_COMPLETA)\n\n👨‍💼 *Si necesitas ayuda personalizada, escribe 'Asesor'.*\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a las categorías de asesoramiento.*",
+    "message": "🛍️ Otras Categorías.\n\n📌 Si no encontraste lo que buscas, visita nuestra tienda completa.",
+    "buttons": [
+      {
+        "text": "🛒 Ver todas las categorías aquí",
+        "url": "https://www.tidi.com.ar"
+      }
+    ],
     "options": {
       "m": "menuPrincipal",
       "b": "flowAsesoramiento",

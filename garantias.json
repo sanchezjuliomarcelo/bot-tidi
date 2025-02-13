@@ -3,7 +3,7 @@
     "message": "🛠️ *Gestión de Garantías* 📦\n\n¡Entendido! Vamos a ayudarte con tu consulta sobre garantía.\n\n📌 *Por favor, elige una opción:*\n\n📄 A. *Consultar políticas de garantía.*\n📋 B. *Registrar un reclamo.*\n🔍 C. *Consultar el estado de un reclamo.*\n\n🔙 *Escribe 'M' para volver al Menú Principal.*",
     "options": {
       "a": "flowPoliticasGarantia",
-      "b": "flowRegistrarReclamo",
+      "b": "flowRegistrarReclamoFecha",
       "c": "flowEstadoReclamo",
       "m": "menuPrincipal"
     }
@@ -18,8 +18,31 @@
     }
   },
 
-  "flowRegistrarReclamo": {
-    "message": "📋 *Registro de Reclamo de Garantía.*\n\nPara registrar tu reclamo, necesitamos algunos datos fundamentales. \n\n📌 *Por favor, ingresa la siguiente información:* \n\n📅 *Fecha de recepción del producto* (formato DD/MM/AAAA).\n👤 *Nombre completo.*\n🆔 *DNI.*\n✉️ *Correo electrónico.*\n📦 *Producto (nombre o código).* \n\nUna vez recibida esta información, uno de nuestros asesores te contactará para confirmar tu solicitud.\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a Garantías.*",
+  "flowRegistrarReclamoFecha": {
+    "message": "📅 *Registro de Reclamo de Garantía.*\n\nPara determinar si tu producto aplica para DOA o garantía posventa, necesitamos saber la fecha en la que lo recibiste.\n\n📌 *Por favor, ingresa la fecha de recepción del producto en formato DD/MM/AAAA.*",
+    "options": {
+      "m": "menuPrincipal",
+      "b": "flowGarantias"
+    }
+  },
+
+  "flowDOA": {
+    "message": "🚨 *Producto dentro del período DOA (Dead on Arrival)*\n\nTu producto fue recibido hace menos de 10 días. Para estos casos, la gestión se realiza a través del canal comercial.\n\n📌 Por favor, contactate con nuestro equipo de ventas para resolver tu caso rápidamente.\n\n📞 *Teléfono:* +54 11 XXXX-XXXX\n📧 *Email:* ventas@tidi.com.ar\n\n🔙 *Escribe 'M' para volver al Menú Principal.*",
+    "options": {
+      "m": "menuPrincipal"
+    }
+  },
+
+  "flowGarantiaPosventaMarcas": {
+    "message": "🛠️ *Garantía Posventa* 📦\n\nTu producto ya superó los 10 días desde la recepción, por lo que será tratado como garantía posventa.\n\n📌 *¿El producto pertenece a alguna de estas marcas?*\n\n✅ Samsung\n✅ LG\n✅ Sony\n✅ Philips\n✅ Whirlpool\n✅ Electrolux\n✅ Motorola\n✅ Xiaomi\n✅ HP\n✅ Dell\n\n📌 *Responde con 'Sí' o 'No'.*",
+    "options": {
+      "sí": "flowGarantiaPosventaRegistro",
+      "no": "flowPoliticasGarantia"
+    }
+  },
+
+  "flowGarantiaPosventaRegistro": {
+    "message": "📝 *Registro de Garantía Posventa.*\n\n📌 *Por favor, ingresa los siguientes datos:* \n\n👤 *Nombre completo.*\n🆔 *DNI.*\n✉️ *Correo electrónico.*\n📦 *Producto (nombre o código).* \n\nUna vez recibida esta información, uno de nuestros asesores te contactará para continuar con el proceso.",
     "options": {
       "m": "menuPrincipal",
       "b": "flowGarantias"

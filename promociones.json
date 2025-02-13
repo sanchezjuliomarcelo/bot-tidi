@@ -7,7 +7,7 @@
       "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/3fdf2208-927c-4730-bc7e-923bcac0c332___e20f73d6a754d44cd20e099a36627fcc.jpg"
     ],
     "link": {
-      "text": "🛒 🔗 *Ver todas las promociones aquí*",
+      "text": "🛒 🔗 Ver todas las promociones aquí",
       "url": "https://www.tidi.com.ar/promociones"
     },
     "options": {
@@ -15,11 +15,11 @@
       "m": "menuPrincipal",
       "b": "flowPromociones"
     },
-    "optionsText": "💡 *Opciones adicionales:*\n1️⃣ *Quiero recibir notificaciones de promociones.*\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a Promociones.*"
+    "optionsText": "💡 *Opciones adicionales:*\n1️⃣ *Quiero recibir notificaciones de promociones.*\n🔙 Escribe 'M' para volver al Menú Principal o 'B' para regresar a Promociones."
   },
 
   "flowPromocionesSuscripcion": {
-    "message": "📩 *¡Genial! 🎉 Para suscribirte a nuestras promociones, por favor ingresa tu correo electrónico.*\n\n✉️ *Ejemplo:* _miemail@correo.com_\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a Promociones.*",
+    "message": "📩 ¡Genial! 🎉 Para suscribirte a nuestras promociones, por favor ingresa tu correo electrónico.\n\n✉️ Ejemplo: _miemail@correo.com_\n\n🔙 *Escribe 'M' para volver al Menú Principal o 'B' para regresar a Promociones.",
     "options": {
       "m": "menuPrincipal",
       "b": "flowPromociones"
