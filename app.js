@@ -43,9 +43,9 @@ async function loadFlows() {
  * @param {string} sender - 'bot' o 'user'.
  * @param {string} text - El texto a mostrar.
  * @param {array} images - Lista de imágenes a mostrar.
- * @param {object} link - Objeto con `text` y `url` para el enlace.
+ * @param {array} buttons - Lista de botones con `text` y `url`.
  */
-function appendMessage(sender, text, images = [], link = null) {
+function appendMessage(sender, text, images = [], buttons = []) {
   const msgDiv = document.createElement("div");
   msgDiv.classList.add(sender === "bot" ? "bot-message" : "user-message");
 
@@ -58,9 +58,11 @@ function appendMessage(sender, text, images = [], link = null) {
     });
   }
 
-  // Si hay un enlace, mostrarlo con un icono clickeable
-  if (link) {
-    htmlContent += `<p><a href="${link.url}" target="_blank" class="promo-link">🔗 ${link.text}</a></p>`;
+  // Si hay botones, agregarlos como enlaces HTML clickeables
+  if (buttons.length > 0) {
+    buttons.forEach(button => {
+      htmlContent += `<p><a href="${button.url}" target="_blank" class="button">${button.text}</a></p>`;
+    });
   }
 
   msgDiv.innerHTML = htmlContent;
@@ -97,7 +99,7 @@ function handleUserInput() {
 
       appendMessage("bot", botFlows[currentFlow].message);
     } else {
-      appendMessage("bot", "⚠️ *Formato incorrecto.* Por favor, ingresá la fecha en formato DD/MM/AAAA.");
+      appendMessage("bot", "⚠️ Formato incorrecto. Por favor, ingresá la fecha en formato DD/MM/AAAA.");
     }
     userInput.value = "";
     return;
@@ -117,7 +119,12 @@ function handleUserInput() {
 
     if (nextFlowKey && botFlows[nextFlowKey]) {
       currentFlow = nextFlowKey;
-      appendMessage("bot", botFlows[currentFlow].message);
+      
+      // Extraer los botones del siguiente flujo, si existen
+      const buttons = botFlows[currentFlow].buttons || [];
+
+      // Mostrar el mensaje del nuevo flujo con sus botones
+      appendMessage("bot", botFlows[currentFlow].message, [], buttons);
     } else {
       appendMessage("bot", "No entendí esa opción. Por favor, intenta de nuevo.");
     }

@@ -125,3 +125,16 @@ body {
 .promo-link:hover {
   text-decoration: underline;
 }
+
+.button {
+  display: inline-block;
+  margin: 4px 0;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.button:hover {
+  background-color: #0056b3;
+}
