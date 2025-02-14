@@ -16,6 +16,9 @@
 
   "flowAsesoramientoInformaticaCelulares": {
     "message": "💻 Informática y Celulares\n\n📌 Encuentra laptops, PCs de escritorio, tablets, smartphones y accesorios en promoción.",
+    "images": [
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/2594681d-5d54-446a-b5ba-10ad26413bc1___147ce5bd0af8e35eb54829acaa3239ee.jpg"
+    ],
     "buttons": [
       {
         "text": "🛒 Ver productos aquí",
@@ -32,6 +35,9 @@
 
   "flowAsesoramientoElectrodomesticos": {
     "message": "🔌 Electrodomésticos\n\n📌 Disponemos de refrigeradores, lavadoras, cocinas y más en promoción.",
+    "images": [
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/618306b6-9b00-49ed-bdc3-c9507c1c2f66___93c16cd6f3e69cd40badd2e2fc7d4c5b.jpg"
+    ],
     "buttons": [
       {
         "text": "🛒 Ver productos aquí",
@@ -48,6 +54,9 @@
 
   "flowAsesoramientoTVAudio": {
     "message": "📺 TV y Audio\n\n📌 Explora televisores, barras de sonido y parlantes en promoción.",
+    "images": [
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/46d35365-0c46-45b6-94bf-4f8a6fc0bea4___22fcba47c9fcd75f6a624845f2d30b72.jpg"
+    ],
     "buttons": [
       {
         "text": "🛒 Ver productos aquí",
@@ -64,6 +73,9 @@
 
   "flowAsesoramientoDeportes": {
     "message": "🏋️ Deportes y Tiempo Libre\n\n📌 Encuentra bicicletas, cintas para correr, monopatines eléctricos y más.",
+    "images": [
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/152fc093-6374-40fb-b628-1abd5e70bbf1___25f02c6e6ce42b6c2e90ce0c69629815.jpg"
+    ],
     "buttons": [
       {
         "text": "🛒 Ver productos aquí",
@@ -80,6 +92,9 @@
 
   "flowAsesoramientoPequenosElectrodomesticos": {
     "message": "☕ Pequeños Electrodomésticos\n\n📌 Disponemos de cafeteras, licuadoras, aspiradoras y más en promoción.",
+    "images": [
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/1a157114-54ee-42cd-b4fa-ab14801ba77f___f5c7e6f1491ade1ae6be648c78bb630e.jpg"
+    ],
     "buttons": [
       {
         "text": "🛒 Ver productos aquí",
@@ -96,6 +111,9 @@
 
   "flowAsesoramientoCuidadoPersonalSalud": {
     "message": "💆 Cuidado Personal y Salud\n\n📌 Disponemos de secadores, planchitas, afeitadoras y más.",
+    "images": [
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/09d0ae12-f75d-40ab-bf02-88bd81d6dae4___dd4301a1d8537d73fadbe0f0612e934a.jpg"
+    ],
     "buttons": [
       {
         "text": "🛒 Ver productos aquí",
@@ -112,6 +130,9 @@
 
   "flowAsesoramientoBazar": {
     "message": "🍽️ Bazar\n\n📌 Encuentra vajilla, organizadores, termos y más artículos.",
+    "images": [
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/e82026fa-6b14-4a39-bbd2-d8131f6d71c7___a1c7e463f048ec8ba6a9e8ea38e362f3.jpg"
+    ],
     "buttons": [
       {
         "text": "🛒 Ver productos aquí",
@@ -128,6 +149,9 @@
 
   "flowAsesoramientoOtrasCategorias": {
     "message": "🛍️ Otras Categorías\n\n📌 Si no encontraste lo que buscas, visita nuestra tienda completa.",
+    "images": [
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/bf3171e0-ed5e-4021-9893-bcaebd8c7d21___d689cbbaaff90d9358eb5722dc04746f.jpg"
+    ],
     "buttons": [
       {
         "text": "🛒 Ver todas las categorías aquí",
