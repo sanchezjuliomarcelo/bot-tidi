@@ -1,14 +1,13 @@
 {
   "flowCancelarCompra": {
-    "message": "❌ *Solicitud de Cancelación de Compra.*\n\nPara cancelar tu compra, necesitamos algunos datos.\n\n📌 *Por favor, ingresa el número de pedido o tu DNI.*\n\n🔙 *Escribe 'M' para volver al Menú Principal.*",
+    "message": "❌ Solicitud de Cancelación de Compra.\n\nPara cancelar tu compra, necesitamos algunos datos.\n\n📌 Por favor, ingresa tu DNI / CUIT o el número de pedido.\n\n🔙 Escribe 'M' para volver al Menú Principal.",
     "options": {
-      "m": "menuPrincipal",
-      "pedido": "flowMotivoCancelacion"
+      "m": "menuPrincipal"
     }
   },
 
   "flowMotivoCancelacion": {
-    "message": "📌 *Indica el motivo de la cancelación:*\n\n1️⃣ *Me equivoqué en la compra.*\n2️⃣ *El producto no era lo que esperaba.*\n3️⃣ *Encontré una mejor oferta.*\n4️⃣ *Mi método de pago no fue aprobado.*\n5️⃣ *Otro motivo.*\n\n🔴 *Escribe el número correspondiente al motivo de cancelación.*\n🔙 *Escribe 'M' para volver al Menú Principal.*",
+    "message": "📌 Indica el motivo de la cancelación:\n\n1️⃣ Me equivoqué en la compra.\n2️⃣ El producto no era lo que esperaba.\n3️⃣ Encontré una mejor oferta.\n4️⃣ Mi método de pago no fue aprobado.\n5️⃣ Otro motivo.\n\n🔴 Escribe el número correspondiente al motivo de cancelación.\n🔙 Escribe 'M' para volver al Menú Principal.",
     "options": {
       "1": "flowConfirmarCancelacion",
       "2": "flowConfirmarCancelacion",
@@ -20,7 +19,7 @@
   },
 
   "flowConfirmarCancelacion": {
-    "message": "⚠️ *Confirmación de Cancelación.*\n\n📌 ¿Estás seguro/a de que deseas cancelar tu compra?\n\n🔴 *Escribe 'Sí' para confirmar o 'No' para volver al Menú Principal.*\n\n📌 *Ten en cuenta que pueden aplicarse condiciones y políticas de cancelación.*",
+    "message": "⚠️ Confirmación de Cancelación.\n\n📌 ¿Estás seguro/a de que deseas cancelar tu compra?\n\n🔴 Escribe 'Sí' para confirmar o 'No' para volver al Menú Principal.\n\n📌 Ten en cuenta que pueden aplicarse condiciones y políticas de cancelación.",
     "options": {
       "sí": "flowCancelacionConfirmada",
       "no": "menuPrincipal"
@@ -28,9 +27,13 @@
   },
 
   "flowCancelacionConfirmada": {
-    "message": "✅ *Tu solicitud de cancelación ha sido registrada.*\n\n👨‍💼 *En breve, un asesor se pondrá en contacto contigo para confirmar y procesar la cancelación.*\n📩 *También recibirás un correo con los detalles de la cancelación.*\n\n🔙 *Escribe 'M' para volver al Menú Principal.*",
+    "message": "✅ Tu solicitud de cancelación ha sido registrada.\n\n👨‍💼 En breve, un asesor se pondrá en contacto contigo para confirmar y procesar la cancelación.\n📩 También recibirás un correo con los detalles de la cancelación.\n\n🔙 Escribe 'M' para volver al Menú Principal.",
     "options": {
       "m": "menuPrincipal"
     }
+  },
+
+  "flowAsesorCancelacion": {
+    "message": "👨‍💼 Derivando a un asesor para validar los datos de cancelación. Por favor, aguarda un momento..."
   }
 }

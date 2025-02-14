@@ -83,10 +83,9 @@ function handleUserInput() {
   const input = userInput.value.trim().toUpperCase();
   if (!input) return;
 
-  // Muestra el mensaje que escribe el usuario
   appendMessage("user", input);
 
-  // Valida el flow actual
+  // Validar flow actual
   if (!botFlows[currentFlow]) {
     appendMessage("bot", "Error: flujo no encontrado. Regresando al Menú Principal...");
     currentFlow = "menuPrincipal";
@@ -95,10 +94,35 @@ function handleUserInput() {
     return;
   }
 
+  // Lógica especial: Cancelación de compra (flowCancelarCompra)
+  if (currentFlow === "flowCancelarCompra") {
+    // Chequear si 'input' es 'M' para volver al menú
+    if (input === "M") {
+      currentFlow = "menuPrincipal";
+      appendMessage("bot", botFlows[currentFlow].message);
+      userInput.value = "";
+      return;
+    }
+
+    // Chequear si es un DNI válido (9 a 12 dígitos numéricos)
+    if (isValidDNI(input)) {
+      // Derivar a flowAsesorCancelacion
+      currentFlow = "flowAsesorCancelacion";
+      appendMessage("bot", botFlows[currentFlow].message);
+      userInput.value = "";
+      return;
+    } else {
+      // No es DNI válido => Continuar con flowMotivoCancelacion
+      currentFlow = "flowMotivoCancelacion";
+      appendMessage("bot", botFlows[currentFlow].message);
+      userInput.value = "";
+      return;
+    }
+  }
+
   // Lógica específica para el flujo de asesoramiento
   if (currentFlow.startsWith("flowAsesoramiento")) {
     if (!botFlows[currentFlow].options[input] && input.length > 3) {
-      // Deriva a flowAsesor si escribe algo de más de 3 letras
       currentFlow = "flowAsesor";
       appendMessage("bot", botFlows[currentFlow].message);
       userInput.value = "";
@@ -106,11 +130,10 @@ function handleUserInput() {
     }
   }
 
-  // Lógica específica para el flujo de reclamo de garantías
+  // Lógica específica para el flujo de reclamo de garantías (fecha)
   if (currentFlow === "flowRegistrarReclamoFecha") {
     if (isValidDate(input)) {
       const diasDesdeRecepcion = calculateDaysSince(input);
-
       if (diasDesdeRecepcion <= 10) {
         currentFlow = "flowDOA"; 
       } else {
@@ -127,18 +150,17 @@ function handleUserInput() {
   // Manejo de flujos estándar
   const flowConfig = botFlows[currentFlow];
   if (flowConfig.options) {
-    // Convertimos las claves del JSON a mayúsculas para que coincidan con la entrada
+    // Convertir claves a mayúsculas
     const optionsKeys = Object.keys(flowConfig.options).reduce((acc, key) => {
       acc[key.toUpperCase()] = flowConfig.options[key];
       return acc;
     }, {});
 
     const nextFlowKey = optionsKeys[input];
-
     if (nextFlowKey && botFlows[nextFlowKey]) {
       currentFlow = nextFlowKey;
 
-      // Extraer las imágenes, botones y el mensaje de seguimiento
+      // Extraer imágenes, botones, followUp
       const images = botFlows[currentFlow].images || [];
       const buttons = botFlows[currentFlow].buttons || [];
       const followUp = botFlows[currentFlow].followUp || null;
@@ -148,13 +170,23 @@ function handleUserInput() {
       appendMessage("bot", "No entendí esa opción. Por favor, intenta de nuevo.");
     }
   } else {
-    // Si no hay opciones, volvemos al menú principal
     appendMessage("bot", "Regresando al Menú Principal...");
     currentFlow = "menuPrincipal";
     appendMessage("bot", botFlows[currentFlow].message);
   }
 
   userInput.value = "";
+}
+
+/**
+ * Validar DNI (entre 9 y 12 dígitos numéricos)
+ * @param {string} input - Texto ingresado por el usuario
+ * @returns {boolean} - True si cumple la condición
+ */
+function isValidDNI(input) {
+  // Verificar que solo tenga dígitos y longitud de 9 a 12
+  const dniRegex = /^[0-9]{9,12}$/;
+  return dniRegex.test(input);
 }
 
 /**
@@ -186,80 +218,6 @@ function calculateDaysSince(dateString) {
 }
 
 // Carga inicial
-loadFlows();
-
-// Eventos
-sendBtn.addEventListener("click", handleUserInput);
-userInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    handleUserInput();
-  }
-});
-
-
-  // Manejo de flujos estándar
-  const flowConfig = botFlows[currentFlow];
-
-  if (flowConfig.options) {
-    // Convertimos las claves del JSON a mayúsculas para que coincidan con la entrada del usuario
-    const optionsKeys = Object.keys(flowConfig.options).reduce((acc, key) => {
-      acc[key.toUpperCase()] = flowConfig.options[key];
-      return acc;
-    }, {});
-
-    const nextFlowKey = optionsKeys[input]; // Buscar la opción convertida a mayúsculas
-
-    if (nextFlowKey && botFlows[nextFlowKey]) {
-      currentFlow = nextFlowKey;
-      
-      // Extraer los botones y el mensaje de seguimiento del nuevo flujo, si existen
-      const buttons = botFlows[currentFlow].buttons || [];
-      const followUp = botFlows[currentFlow].followUp || null;
-
-      // Mostrar el mensaje del nuevo flujo con sus botones y mensaje adicional si aplica
-      appendMessage("bot", botFlows[currentFlow].message, [], buttons, followUp);
-    } else {
-      appendMessage("bot", "No entendí esa opción. Por favor, intenta de nuevo.");
-    }
-  } else {
-    appendMessage("bot", "Regresando al Menú Principal...");
-    currentFlow = "menuPrincipal";
-    appendMessage("bot", botFlows[currentFlow].message);
-  }
-
-  userInput.value = "";
-
-
-/**
- * Verifica si una fecha ingresada tiene un formato válido (DD/MM/AAAA)
- * @param {string} dateString - Fecha en formato string.
- * @returns {boolean} - True si es válida, False si no.
- */
-function isValidDate(dateString) {
-  const regex = /^\d{2}\/\d{2}\/\d{4}$/;
-  if (!dateString.match(regex)) return false;
-
-  const [day, month, year] = dateString.split("/").map(Number);
-  const date = new Date(year, month - 1, day);
-
-  return date instanceof Date && !isNaN(date) && date.getDate() === day && date.getMonth() === month - 1;
-}
-
-/**
- * Calcula cuántos días han pasado desde una fecha dada hasta hoy.
- * @param {string} dateString - Fecha en formato DD/MM/AAAA.
- * @returns {number} - Días transcurridos desde esa fecha hasta hoy.
- */
-function calculateDaysSince(dateString) {
-  const [day, month, year] = dateString.split("/").map(Number);
-  const receivedDate = new Date(year, month - 1, day);
-  const today = new Date();
-
-  const diffTime = today - receivedDate;
-  return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-}
-
-// Llamar a la función de carga al inicio
 loadFlows();
 
 // Eventos
