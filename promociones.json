@@ -1,10 +1,10 @@
 {
   "flowPromociones": {
-    "message": "💥 ¡Promociones exclusivas de la semana! 🛍️\n\n🎯 Elige qué tipo de promoción te interesa:\n\n1️⃣ Descuentos en productos\n2️⃣ Cuotas sin interés\n3️⃣ Combos especiales\n4️⃣ Envío gratis\n\n🔙 Escribe 'M' para volver al menú principal.",
+    "message": "💥 ¡Promociones exclusivas de la semana! 🛍️\n\n🎯 Elige qué tipo de promoción te interesa:\n\n1️⃣ Descuentos en productos\n2️⃣ Cuotas sin interés\n3️⃣ Promos en 1 Pago\n4️⃣ Cuotas con débito\n\n🔙 Escribe 'M' para volver al menú principal.",
     "options": {
       "1": "flowPromocionesDescuentos",
       "2": "flowPromocionesCuotas",
-      "3": "flowPromocionesCombos",
+      "3": "flowPromociones1Pago",
       "4": "flowPromocionesEnvios",
       "m": "menuPrincipal"
     }
@@ -13,109 +13,76 @@
   "flowPromocionesDescuentos": {
     "message": "🎉 ¡Mirá estas increíbles ofertas con descuento! 📉",
     "images": [
-      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/7b3ac4c8-c3ec-4e25-8d84-8c182dd7ddd6___4c2931f9c03f0155b254a2c5d485d2d4.jpg",
-      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/1b18180d-6f70-48f4-88b8-564f2b08da26___67a90242011886b8b8bd37bd7a6f387c.jpg"
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/abb453a1-27ac-492c-a26a-de93429a1aca___4e740d3bf5597456c487c946753933d1.jpg"
     ],
-    "additionalMessages": [
+    "buttons": [
       {
-        "message": "🛒 Para ver más productos con descuento, haz clic aquí:"
-      },
-      {
-        "buttons": [
-          {
-            "text": "🔗 Ver más descuentos",
-            "url": "https://www.tidi.com.ar/promociones/descuentos"
-          }
-        ]
-      },
-      {
-        "message": "🔙 Escribe 'asesor' para hablar con un agente o 'M' para volver al menú principal."
+        "text": "🔗 Ver más descuentos",
+        "url": "https://www.tidi.com.ar/promociones/descuentos"
       }
     ],
+    "followUp": "🔙 Escribe 'asesor' para hablar con un agente o 'B' para volver atrás, o 'M' para ir al menú principal.",
     "options": {
-      "asesor": "flowAsesor",
-      "m": "menuPrincipal"
+      "ASESOR": "flowAsesor",
+      "B": "flowPromociones",
+      "M": "menuPrincipal"
     }
   },
 
   "flowPromocionesCuotas": {
     "message": "💳 ¡Comprá en cuotas sin interés! ✅",
     "images": [
-      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/3fdf2208-927c-4730-bc7e-923bcac0c332___e20f73d6a754d44cd20e099a36627fcc.jpg"
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/1de4545f-f6b0-49a9-a931-6ff4919e2567___9b9d4ab5cf9c28abc659ea834910c1c8.jpg"
     ],
-    "additionalMessages": [
+    "buttons": [
       {
-        "message": "🛒 Para conocer todas las opciones de cuotas, haz clic aquí:"
-      },
-      {
-        "buttons": [
-          {
-            "text": "🔗 Ver cuotas sin interés",
-            "url": "https://www.tidi.com.ar/promociones/cuotas"
-          }
-        ]
-      },
-      {
-        "message": "🔙 Escribe 'asesor' para hablar con un agente o 'M' para volver al menú principal."
+        "text": "🔗 Ver cuotas sin interés",
+        "url": "https://www.tidi.com.ar/promociones/cuotas"
       }
     ],
+    "followUp": "🔙 Escribe 'asesor' para hablar con un agente o 'B' para volver atrás, o 'M' para ir al menú principal.",
     "options": {
-      "asesor": "flowAsesor",
-      "m": "menuPrincipal"
+      "ASESOR": "flowAsesor",
+      "B": "flowPromociones",
+      "M": "menuPrincipal"
     }
   },
 
-  "flowPromocionesCombos": {
-    "message": "🛍️ ¡Aprovechá estos combos especiales! 🎁",
+  "flowPromociones1Pago": {
+    "message": "🛍️ ¡Aprovechá las promos en 1 pago! 🎁",
     "images": [
-      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/1b18180d-6f70-48f4-88b8-564f2b08da26___67a90242011886b8b8bd37bd7a6f387c.jpg"
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/1f555580-ee33-4f19-8967-03bedd102205___25086e471347d27f900fe921c9b8e83f.jpg"
     ],
-    "additionalMessages": [
+    "buttons": [
       {
-        "message": "🛒 Para ver más combos, haz clic aquí:"
-      },
-      {
-        "buttons": [
-          {
-            "text": "🔗 Ver combos especiales",
-            "url": "https://www.tidi.com.ar/promociones/combos"
-          }
-        ]
-      },
-      {
-        "message": "🔙 Escribe 'asesor' para hablar con un agente o 'M' para volver al menú principal."
+        "text": "🔗 Descuentos en 1 Pago",
+        "url": "https://www.tidi.com.ar/promociones/combos"
       }
     ],
+    "followUp": "🔙 Escribe 'asesor' para hablar con un agente o 'B' para volver atrás, o 'M' para ir al menú principal.",
     "options": {
-      "asesor": "flowAsesor",
-      "m": "menuPrincipal"
+      "ASESOR": "flowAsesor",
+      "B": "flowPromociones",
+      "M": "menuPrincipal"
     }
   },
 
   "flowPromocionesEnvios": {
-    "message": "🚚 ¡Envío gratis en productos seleccionados! 📦",
+    "message": "💳 ¡Cuotas con débito en productos seleccionados! 📦",
     "images": [
-      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/3fdf2208-927c-4730-bc7e-923bcac0c332___e20f73d6a754d44cd20e099a36627fcc.jpg"
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/dba8988e-24f9-47f3-9f14-2e439a48face___649740788ab53b12c14e09c4d544070c.jpg"
     ],
-    "additionalMessages": [
+    "buttons": [
       {
-        "message": "🛒 Consulta los productos con envío gratis aquí:"
-      },
-      {
-        "buttons": [
-          {
-            "text": "🔗 Ver envío gratis",
-            "url": "https://www.tidi.com.ar/promociones/envio-gratis"
-          }
-        ]
-      },
-      {
-        "message": "🔙 Escribe 'asesor' para hablar con un agente o 'M' para volver al menú principal."
+        "text": "🔗 Go cuotas",
+        "url": "https://www.tidi.com.ar/promociones/envio-gratis"
       }
     ],
+    "followUp": "🔙 Escribe 'asesor' para hablar con un agente o 'B' para volver atrás, o 'M' para ir al menú principal.",
     "options": {
-      "asesor": "flowAsesor",
-      "m": "menuPrincipal"
+      "ASESOR": "flowAsesor",
+      "B": "flowPromociones",
+      "M": "menuPrincipal"
     }
   },
 
