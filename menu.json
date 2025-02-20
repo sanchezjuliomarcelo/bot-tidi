@@ -1,13 +1,13 @@
 {
   "menuPrincipal": {
-    "message": "👋 ¡Hola! 😊 Gracias por contactarnos.\n\n📌 Elige una opción para que podamos ayudarte:\n\n🔎 A. Consultar sobre productos.\n🎁 B. Promociones.\n🛒 C. Quiero comprar.\n✏️ D. Modificar mi compra.\n❌ E. Cancelar mi compra.\n🛠 F. Gestión de Garantías.\n\n⚡ Escribe la letra correspondiente para continuar.",
+    "message": "Te damos la bienvenida al centro de atención al cliente TIDI.\n\n📌 ¿En qué podemos ayudarte? (Selecciona una opción) :\n\n🔎 1. Consultar sobre productos.\n🎁 2. Promociones.\n🛒 3. Quiero comprar.\n✏️ 4. Modificar mi compra.\n❌ 5. Cancelar mi compra.\n🛠 6. Soporte Técnico.\n\n",
     "options": {
-      "A": "flowAsesoramiento",
-      "B": "flowPromociones",
-      "C": "flowquierocomprar",
-      "D": "flowModificarCompra",
-      "E": "flowCancelarCompra",
-      "F": "flowGarantias"
+      "1": "flowAsesoramiento",
+      "2": "flowPromociones",
+      "3": "flowquierocomprar",
+      "4": "flowModificarCompra",
+      "5": "flowCancelarCompra",
+      "6": "flowGarantias"
     }
   }
 }

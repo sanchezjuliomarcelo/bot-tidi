@@ -1,11 +1,11 @@
 {
   "flowGarantias": {
-    "message": "🛠️ Gestión de Garantías 📦\n\n¡Entendido! Vamos a ayudarte con tu consulta sobre garantía.\n\n📌 Por favor, elige una opción:\n\n📄 A. Consultar políticas de garantía.\n📋 B. Registrar un reclamo.\n🔍 C. Consultar el estado de un reclamo.\n\n🔙 Escribe 'M' para volver al Menú Principal.",
+    "message": "🛠️ Tu consulta es:\n\n📄 1.Política de garantía.\n📋 2.Registrar un incidente\n🔍 3. Consultar el estado de un incidente.\n🔙 4. volver al menú principal.",
     "options": {
-      "a": "flowPoliticasGarantia",
-      "b": "flowRegistrarReclamoFecha",
-      "c": "flowEstadoReclamo",
-      "m": "menuPrincipal"
+      "1": "flowPoliticasGarantia",
+      "2": "flowRegistrarReclamoFecha",
+      "3": "flowEstadoReclamo",
+      "4": "menuPrincipal"
     }
   },
 
@@ -27,7 +27,7 @@
   },
 
   "flowRegistrarReclamoFecha": {
-    "message": "📅 Registro de Reclamo de Garantía.\n\nPara determinar si tu producto aplica para DOA o garantía posventa, necesitamos saber la fecha en la que lo recibiste.\n\n📌 *Por favor, ingresa la fecha de recepción del producto en formato DD/MM/AAAA.*",
+    "message": "📅  *Por favor, ingresa la fecha de recepción del producto en formato DD/MM/AAAA.",
     "options": {
       "m": "menuPrincipal",
       "b": "flowGarantias"
@@ -35,7 +35,7 @@
   },
 
   "flowDOA": {
-    "message": "🚨 *Producto dentro del período DOA (Dead on Arrival)*\n\nTu producto fue recibido hace menos de 10 días. Para estos casos, la gestión se realiza a través del canal comercial.\n\n📌 Te derivaremos con nuestro equipo de ventas para resolver tu caso rápidamente.\n\n📞 tambien podes comunicarte Teléfonicamente: 0810-888-3444\n📧 Email: ventas@tidi.com.ar\n\n🔙 *Escribe 'M' para volver al Menú Principal.*",
+    "message": "🚨 Te estoy derivando con un asesor ",
     "options": {
       "m": "menuPrincipal"
     }
