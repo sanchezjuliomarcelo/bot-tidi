@@ -1,21 +1,16 @@
-// Variables globales
-let botFlows = {}; // Objeto donde se cargarán los flujos
-let currentFlow = ""; // Estado actual del bot
+// ------------------- Variables globales -------------------
+let botFlows = {};
+let currentFlow = "";
 
-// Estructura para guardar los datos de flowGarantiaPosventaRegistro
-let posventaData = {
-  step: 0,           // Indica en cuál de los 3 datos estamos
-  name: "",
-  email: "",
-  product: ""
-};
+// Datos para flowGarantiaPosventaRegistro
+let posventaData = { step: 0, name: "", email: "", product: "" };
 
-// Referencias al DOM
+// ------------------- DOM -------------------
 const chatWindow = document.getElementById("chat-window");
-const userInput = document.getElementById("user-input");
-const sendBtn = document.getElementById("send-btn");
+const userInput   = document.getElementById("user-input");
+const sendBtn     = document.getElementById("send-btn");
 
-// Archivos JSON a cargar
+// ------------------- Archivos -------------------
 const flowFiles = [
   "menu.json",
   "asesoramiento.json",
@@ -26,208 +21,173 @@ const flowFiles = [
   "garantias.json"
 ];
 
-async function loadFlows() {
-  try {
-    const flowPromises = flowFiles.map(file => fetch(file).then(res => res.json()));
-    const flowData = await Promise.all(flowPromises);
-
-    botFlows = Object.assign({}, ...flowData);
-    
+// ------------------- Cargar flujos -------------------
+async function loadFlows(){
+  try{
+    const data = await Promise.all(
+      flowFiles.map(f => fetch(f).then(r => r.json()))
+    );
+    botFlows = Object.assign({}, ...data);
     currentFlow = "menuPrincipal";
     appendMessage("bot", botFlows[currentFlow].message);
-  } catch (error) {
-    console.error("Error al cargar los flujos:", error);
-    appendMessage("bot", "Hubo un error al cargar la conversación.");
+  }catch(e){
+    console.error(e);
+    appendMessage("bot","Hubo un error al iniciar la conversación.");
   }
 }
 
-/**
- * Función para insertar mensajes en el chat.
- */
-function appendMessage(sender, text, images = [], buttons = [], followUp = null) {
-  const msgDiv = document.createElement("div");
-  msgDiv.classList.add(sender === "bot" ? "bot-message" : "user-message");
+// ------------------- Append Message -------------------
+function appendMessage(sender, text, images=[], buttons=[], followUp=null){
+  const msg = document.createElement("div");
+  msg.classList.add(sender==="bot" ? "bot-message" : "user-message");
+  let html = `<p>${text.replace(/\n/g,"<br>")}</p>`;
 
-  let htmlContent = `<p>${text.replace(/\n/g, "<br>")}</p>`;
+  images.forEach(src=>{
+    html += `<img src="${src}" class="promo-image" alt="Imagen">`;
+  });
+  buttons.forEach(b=>{
+    html += `<p><a href="${b.url}" target="_blank" class="button">${b.text}</a></p>`;
+  });
 
-  // Si hay imágenes
-  if (images.length > 0) {
-    images.forEach(imgSrc => {
-      htmlContent += `<img src="${imgSrc}" class="promo-image" alt="Promoción">`;
-    });
-  }
-
-  // Si hay botones
-  if (buttons.length > 0) {
-    buttons.forEach(button => {
-      htmlContent += `<p><a href="${button.url}" target="_blank" class="button">${button.text}</a></p>`;
-    });
-  }
-
-  msgDiv.innerHTML = htmlContent;
-  chatWindow.appendChild(msgDiv);
+  msg.innerHTML = html;
+  chatWindow.appendChild(msg);
   chatWindow.scrollTop = chatWindow.scrollHeight;
 
-  // followUp
-  if (followUp) {
-    setTimeout(() => appendMessage("bot", followUp), 500);
+  if (followUp){
+    setTimeout(()=>appendMessage("bot", followUp), 500);
   }
 }
 
-function handleUserInput() {
-  const input = userInput.value.trim();
-  if (!input) return;
+// ------------------- Handler principal -------------------
+function handleUserInput(){
+  const raw = userInput.value.trim();
+  if (!raw) return;
 
-  appendMessage("user", input);
-  const upperInput = input.toUpperCase();
+  appendMessage("user", raw);
+  const input = raw.toUpperCase();        // Se usa para comparar letras; mantiene dígitos
 
-  // Valida el flow actual
-  if (!botFlows[currentFlow]) {
+  /* ---------- 0. Validación de flujo ---------- */
+  if (!botFlows[currentFlow]){
     currentFlow = "menuPrincipal";
     appendMessage("bot", botFlows[currentFlow].message);
     userInput.value = "";
     return;
   }
 
-  // Lógica interna para flowGarantiaPosventaRegistro
-  if (currentFlow === "flowGarantiaPosventaRegistro") {
-    handlePosventaRegistro(input);
+  /* ---------- 1. Registro posventa (nombre-mail-producto) ---------- */
+  if (currentFlow === "flowGarantiaPosventaRegistro"){
+    handlePosventaRegistro(raw);          // se pasa el original con minúsculas posibles
     userInput.value = "";
     return;
   }
 
-  // Lógica específica para reclamo de garantías (fecha)
-  if (currentFlow === "flowRegistrarReclamoFecha") {
-    if (isValidDate(input)) {
-      const diasDesdeRecepcion = calculateDaysSince(input);
-      if (diasDesdeRecepcion <= 10) {
-        currentFlow = "flowDOA";
-      } else {
-        currentFlow = "flowGarantiaPosventaMarcas"; 
-      }
-      appendMessage("bot", botFlows[currentFlow].message);
-    } else {
-      appendMessage("bot", "⚠️ Formato incorrecto. Por favor, ingrese la fecha en formato DD/MM/AAAA.");
+  /* ---------- 2. Fecha de recepción (DOA vs Posventa) ---------- */
+  if (["flowFechaRecepcionMarcaEspecial","flowFechaRecepcionOtrasMarcas"].includes(currentFlow)){
+    if (isValidDate(raw)){
+      const dias = calculateDaysSince(raw);
+      currentFlow = (dias<=10)        ? "flowDOA"
+                  : (currentFlow==="flowFechaRecepcionMarcaEspecial")
+                                          ? "flowGarantia"
+                                          : "flowDerivaGarantias";
+      const cfg = botFlows[currentFlow];
+      appendMessage("bot", cfg.message, cfg.images||[], cfg.buttons||[]);
+    }else{
+      appendMessage("bot","⚠️ Formato incorrecto. Ingrese DD/MM/AAAA.");
     }
-    userInput.value = "";
+    userInput.value="";
     return;
   }
 
-  // Manejo de flujos estándar
-  const flowConfig = botFlows[currentFlow];
-  if (flowConfig.options) {
-    // Convertir claves a mayúsculas
-    const optionsKeys = Object.keys(flowConfig.options).reduce((acc, key) => {
-      acc[key.toUpperCase()] = flowConfig.options[key];
+  /* ---------- 3. Flujos con opción automática ---------- */
+  const flowCfg = botFlows[currentFlow];
+  if (flowCfg.options && flowCfg.options["__AUTO__"]){
+    currentFlow = flowCfg.options["__AUTO__"];
+    const cfg = botFlows[currentFlow];
+    appendMessage("bot", cfg.message, cfg.images||[], cfg.buttons||[], cfg.followUp||null);
+    userInput.value="";
+    return;
+  }
+
+  /* ---------- 4. Flujos estándar ---------- */
+  if (flowCfg.options){
+    const opt = Object.keys(flowCfg.options).reduce((acc,k)=>{
+      acc[k.toUpperCase()] = flowCfg.options[k];
       return acc;
-    }, {});
+    },{});
 
-    const nextFlowKey = optionsKeys[upperInput];
-    if (nextFlowKey && botFlows[nextFlowKey]) {
-      currentFlow = nextFlowKey;
-      const images = botFlows[currentFlow].images || [];
-      const buttons = botFlows[currentFlow].buttons || [];
-      const followUp = botFlows[currentFlow].followUp || null;
-
-      appendMessage("bot", botFlows[currentFlow].message, images, buttons, followUp);
-    } else {
-      appendMessage("bot", "No entendí esa opción. Por favor, intente de nuevo.");
+    const next = opt[input];
+    if (next && botFlows[next]){
+      currentFlow = next;
+      const cfg = botFlows[currentFlow];
+      appendMessage("bot", cfg.message, cfg.images||[], cfg.buttons||[], cfg.followUp||null);
+    }else{
+      appendMessage("bot","No entendí esa opción. Por favor, intente de nuevo.");
     }
-  } else {
-    // Si no hay options, volver a menú principal
+  }else{
     currentFlow = "menuPrincipal";
     appendMessage("bot", botFlows[currentFlow].message);
   }
 
-  userInput.value = "";
+  userInput.value="";
 }
 
-// Manejo de la captura de datos en flowGarantiaPosventaRegistro
-function handlePosventaRegistro(input) {
-  // Chequear si el usuario quiere volver
-  const upperInput = input.toUpperCase();
-  if (upperInput === "M") {
+/* ---------- 5. Registro posventa paso a paso ---------- */
+function handlePosventaRegistro(raw){
+  const up = raw.toUpperCase();
+  if (up==="M"){
     currentFlow = "menuPrincipal";
     appendMessage("bot", botFlows[currentFlow].message);
-    resetPosventaData();
+    resetPosventa();
     return;
   }
-  if (upperInput === "B") {
+  if (up==="B"){
     currentFlow = "flowGarantias";
     appendMessage("bot", botFlows[currentFlow].message);
-    resetPosventaData();
+    resetPosventa();
     return;
   }
 
-  // Lógica de 3 pasos: Name, Email, Product
-  switch (posventaData.step) {
+  switch(posventaData.step){
     case 0:
-      // Primer dato: Nombre
-      posventaData.name = input;
+      posventaData.name = raw;
       posventaData.step = 1;
-      appendMessage("bot", "✉️ Ahora, ingrese su correo electrónico:");
+      appendMessage("bot","✉️ Ingrese su correo electrónico:");
       break;
-
     case 1:
-      // Segundo dato: Email
-      posventaData.email = input;
+      posventaData.email = raw;
       posventaData.step = 2;
-      appendMessage("bot", "📦 Finalmente, indique el nombre del producto:");
+      appendMessage("bot","📦 Indique el nombre del producto:");
       break;
-
     case 2:
-      // Tercer dato: Producto
-      posventaData.product = input;
-      // Ya tenemos los 3 datos
-      appendMessage("bot", "Perfecto, lo estamos derivando con un asesor.");
-      // derivar
+      posventaData.product = raw;
+      appendMessage("bot","Perfecto, lo estamos derivando con un asesor.");
       currentFlow = "flowAsesor";
       appendMessage("bot", botFlows[currentFlow].message);
-      // Reset data
-      resetPosventaData();
+      resetPosventa();
       break;
   }
 }
-
-function resetPosventaData() {
-  posventaData = {
-    step: 0,
-    name: "",
-    email: "",
-    product: ""
-  };
+function resetPosventa(){
+  posventaData = { step:0, name:"", email:"", product:"" };
 }
 
-/**
- * Verifica si una fecha ingresada tiene un formato válido (DD/MM/AAAA).
- */
-function isValidDate(dateString) {
-  const regex = /^\d{2}\/\d{2}\/\d{4}$/;
-  if (!dateString.match(regex)) return false;
-
-  const [day, month, year] = dateString.split("/").map(Number);
-  const date = new Date(year, month - 1, day);
-
+/* ---------- 6. Utilidades ---------- */
+function isValidDate(d){
+  const r = /^\d{2}\/\d{2}\/\d{4}$/;
+  if (!r.test(d)) return false;
+  const [day,month,year] = d.split("/").map(Number);
+  const date = new Date(year, month-1, day);
   return (date instanceof Date && !isNaN(date) &&
-          date.getDate() === day &&
-          date.getMonth() === month - 1);
+          date.getDate()===day && date.getMonth()===month-1);
+}
+function calculateDaysSince(d){
+  const [day,month,year] = d.split("/").map(Number);
+  return Math.ceil((new Date() - new Date(year,month-1,day)) / (1000*60*60*24));
 }
 
-function calculateDaysSince(dateString) {
-  const [day, month, year] = dateString.split("/").map(Number);
-  const receivedDate = new Date(year, month - 1, day);
-  const today = new Date();
-  const diffTime = today - receivedDate;
-  return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-}
-
-// Carga inicial
+/* ---------- 7. Inicio y eventos ---------- */
 loadFlows();
-
-// Eventos
 sendBtn.addEventListener("click", handleUserInput);
-userInput.addEventListener("keypress", e => {
-  if (e.key === "Enter") {
-    handleUserInput();
-  }
+userInput.addEventListener("keypress", e=>{
+  if (e.key==="Enter") handleUserInput();
 });

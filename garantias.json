@@ -1,86 +1,50 @@
 {
+ 
   "flowGarantias": {
-    "message": "🛠️ Tu consulta es:\n\n📄 1. Política de garantía.\n📋 2. Registrar un incidente\n🔍 3. Consultar el estado de un incidente.\n🔙 4. Volver al menú principal.",
+    "message": "🛠️ Bienvenido al centro de garantías.",
+    "followUp": "🏷️ ¿El producto es de alguna de estas marcas?\n\n✅ Caseé\n✅ Vigore Sport\n✅ SBK\n\nResponda con 'SI' o 'NO'.\n\n🔙 Escriba 'M' para volver al menú principal en cualquier momento.",
     "options": {
-      "1": "flowPoliticasGarantia",
-      "2": "flowRegistrarReclamoFecha",
-      "3": "flowEstadoReclamo",
-      "4": "menuPrincipal"
-    }
-  },
-
-  "flowPoliticasGarantia": {
-    "message": "📄 Políticas de Garantía.\n\nNuestra garantía cubre defectos de fabricación y fallas propias del producto.",
-    "buttons": [
-      {
-        "text": "📜 Consulta los detalles completos aquí",
-        "url": "https://www.tidi.com.ar/cambios-y-devoluciones"
-      }
-    ],
-    "followUp": "👨‍💼 Si necesita más información, escriba 'ASESOR' para hablar con un representante.\n\n🔙 Escriba 'M' para volver al Menú Principal o 'B' para regresar a Garantías.",
-    "options": {
-      "ASESOR": "flowAsesor",
-      "M": "menuPrincipal",
-      "B": "flowGarantias"
-    }
-  },
-
-  "flowRegistrarReclamoFecha": {
-    "message": "📅 Por favor, ingrese la fecha de recepción del producto en formato DD/MM/AAAA.",
-    "options": {
-      "M": "menuPrincipal",
-      "B": "flowGarantias"
-    }
-  },
-
-  "flowDOA": {
-    "message": "🚨 Lo estamos derivando con un asesor.",
-    "options": {
+      "SI": "flowFechaRecepcionMarcaEspecial",
+      "NO": "flowFechaRecepcionOtrasMarcas",
       "M": "menuPrincipal"
     }
   },
 
-  "flowGarantiaPosventaMarcas": {
-    "message": "📌 ¿El producto pertenece a alguna de estas marcas?\n\n✅ Samsung\n✅ LG\n✅ Sony\n✅ Philips\n✅ Whirlpool\n✅ Electrolux\n✅ Motorola\n✅ Xiaomi\n✅ HP\n✅ Dell\n\n📌 Responda con 'SI' o 'NO'.",
-    "options": {
-      "SI": "flowGarantiaPosventaRegistro",
-      "NO": "flowPoliticasGarantia2"
-    }
-  },
-
-  "flowGarantiaPosventaRegistro": {
-    "message": "Por favor, ingrese sus datos.\n\n👤 Nombre y apellido.\n✉️ Correo electrónico.\n📦 Producto.",
+ 
+  "flowFechaRecepcionMarcaEspecial": {
+    "message": "📅 Ingrese la fecha de recepción del producto (formato DD/MM/AAAA):",
     "options": {
       "M": "menuPrincipal",
       "B": "flowGarantias"
     }
   },
 
-  "flowPoliticasGarantia2": {
-    "message": "📄 Para registrar el incidente de su producto, debe contactarse con:",
+
+  "flowFechaRecepcionOtrasMarcas": {
+    "message": "📅 Ingrese la fecha de recepción del producto (formato DD/MM/AAAA):",
+    "options": {
+      "M": "menuPrincipal",
+      "B": "flowGarantias"
+    }
+  },
+
+
+  "flowDOA": {
+    "message": "✅ El producto se encuentra dentro del período de Garantía.\n🚨 Generando incidente automáticamente..."
+  },
+
+  "flowGarantia": {
+    "message": "🔧 El producto será tramitado como garantía.\n📂 Lo estamos derivando con un agente, aguarde por favor..."
+  },
+
+  "flowDerivaGarantias": {
+    "message": "📄 El producto no está dentro del período de Garantía.\nPara contactar al service oficial, consulte nuestro listado de proveedores:",
     "buttons": [
       {
-        "text": "📜 Consulta los detalles completos aquí",
+        "text": "📜 Ver políticas de garantía",
         "url": "https://www.tidi.com.ar/cambios-y-devoluciones"
       }
     ],
-    "followUp": "🔙 Escriba '1' para volver al Menú Principal o '2' para regresar a Garantías.",
-    "options": {
-      "1": "menuPrincipal",
-      "2": "flowGarantias",
-      "ASESOR": "flowAsesor"
-    }
-  },
-
-  "flowEstadoReclamo": {
-    "message": "🔍 Consulta de Estado de Incidente.\n\n📌 Por favor, ingrese el número de incidente o de pedido asociado.\n\nLe informaremos el estado actual de su trámite.\n\n🔙 Escriba '1' para volver al Menú Principal o '2' para regresar a Garantías.",
-    "options": {
-      "1": "menuPrincipal",
-      "2": "flowGarantias"
-    }
-  },
-
-  "flowAsesor": {
-    "message": "👨‍💼 Lo estamos derivando con un asesor. Por favor, aguarde un momento."
+    "followUp": "🔙 Escriba 'M' para volver al menú principal o 'B' para regresar a garantías."
   }
 }

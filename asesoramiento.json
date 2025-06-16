@@ -1,6 +1,7 @@
 {
+
   "flowAsesoramiento": {
-    "message": "🤖 Asesoramiento de Productos 🛒\n\n📌 ¿Sobre qué tipo de producto necesitas asesoramiento?\n\n💻 1️⃣ Informática y Celulares\n🔌 2️⃣ Electrodomésticos\n📺 3️⃣ TV y Audio\n🏋️ 4️⃣ Deportes y Tiempo Libre\n☕ 5️⃣ Pequeños Electrodomésticos\n💆 6️⃣ Cuidado Personal y Salud\n🍽️ 7️⃣ Bazar\n🛍️ 8️⃣ Otras Categorías\n\n🆕 Si ya tienes un producto específico en mente, ingresa el nombre o código.\n\n🔙 Escribe 'M' para volver al Menú Principal.",
+    "message": "🤖 Asesoramiento de Productos 🛒\n\n📌 ¿Sobre qué tipo de producto necesitas asesoramiento?\n\n💻 1️⃣ Informática y Celulares\n🔌 2️⃣ Electrodomésticos\n📺 3️⃣ TV y Audio\n🏋️ 4️⃣ Deportes y Tiempo Libre\n☕ 5️⃣ Pequeños Electrodomésticos\n💆 6️⃣ Cuidado Personal y Salud\n🍽️ 7️⃣ Bazar\n🛍️ 8️⃣ Otras Categorías\n🏷️ 9️⃣ Nuestras Marcas\n\n🆕 Si ya tienes un producto específico en mente, ingresa el nombre o código.\n\n🔙 Escribe 'M' para volver al Menú Principal.",
     "options": {
       "1": "flowAsesoramientoInformaticaCelulares",
       "2": "flowAsesoramientoElectrodomesticos",
@@ -10,7 +11,8 @@
       "6": "flowAsesoramientoCuidadoPersonalSalud",
       "7": "flowAsesoramientoBazar",
       "8": "flowAsesoramientoOtrasCategorias",
-      "m": "menuPrincipal"
+      "9": "flowAsesoramientoNuestrasMarcas",
+      "M": "menuPrincipal"
     }
   },
 
@@ -27,12 +29,13 @@
     ],
     "followUp": "🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a la sección de compra.",
     "options": {
-      "asesor": "flowAsesor",
-      "m": "menuPrincipal",
-      "b": "flowAsesoramiento"
+      "ASESOR": "flowAsesor",
+      "M": "menuPrincipal",
+      "B": "flowAsesoramiento"
     }
   },
 
+ 
   "flowAsesoramientoElectrodomesticos": {
     "message": "🔌 Electrodomésticos\n\n📌 Disponemos de refrigeradores, lavadoras, cocinas y más en promoción.",
     "images": [
@@ -46,12 +49,13 @@
     ],
     "followUp": "🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a la sección de compra.",
     "options": {
-      "asesor": "flowAsesor",
-      "m": "menuPrincipal",
-      "b": "flowAsesoramiento"
+      "ASESOR": "flowAsesor",
+      "M": "menuPrincipal",
+      "B": "flowAsesoramiento"
     }
   },
 
+ 
   "flowAsesoramientoTVAudio": {
     "message": "📺 TV y Audio\n\n📌 Explora televisores, barras de sonido y parlantes en promoción.",
     "images": [
@@ -65,12 +69,13 @@
     ],
     "followUp": "🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a la sección de compra.",
     "options": {
-      "asesor": "flowAsesor",
-      "m": "menuPrincipal",
-      "b": "flowAsesoramiento"
+      "ASESOR": "flowAsesor",
+      "M": "menuPrincipal",
+      "B": "flowAsesoramiento"
     }
   },
 
+  
   "flowAsesoramientoDeportes": {
     "message": "🏋️ Deportes y Tiempo Libre\n\n📌 Encuentra bicicletas, cintas para correr, monopatines eléctricos y más.",
     "images": [
@@ -84,11 +89,12 @@
     ],
     "followUp": "🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a la sección de compra.",
     "options": {
-      "asesor": "flowAsesor",
-      "m": "menuPrincipal",
-      "b": "flowAsesoramiento"
+      "ASESOR": "flowAsesor",
+      "M": "menuPrincipal",
+      "B": "flowAsesoramiento"
     }
   },
+
 
   "flowAsesoramientoPequenosElectrodomesticos": {
     "message": "☕ Pequeños Electrodomésticos\n\n📌 Disponemos de cafeteras, licuadoras, aspiradoras y más en promoción.",
@@ -103,11 +109,12 @@
     ],
     "followUp": "🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a la sección de compra.",
     "options": {
-      "asesor": "flowAsesor",
-      "m": "menuPrincipal",
-      "b": "flowAsesoramiento"
+      "ASESOR": "flowAsesor",
+      "M": "menuPrincipal",
+      "B": "flowAsesoramiento"
     }
   },
+
 
   "flowAsesoramientoCuidadoPersonalSalud": {
     "message": "💆 Cuidado Personal y Salud\n\n📌 Disponemos de secadores, planchitas, afeitadoras y más.",
@@ -122,11 +129,12 @@
     ],
     "followUp": "🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a la sección de compra.",
     "options": {
-      "asesor": "flowAsesor",
-      "m": "menuPrincipal",
-      "b": "flowAsesoramiento"
+      "ASESOR": "flowAsesor",
+      "M": "menuPrincipal",
+      "B": "flowAsesoramiento"
     }
   },
+
 
   "flowAsesoramientoBazar": {
     "message": "🍽️ Bazar\n\n📌 Encuentra vajilla, organizadores, termos y más artículos.",
@@ -141,11 +149,12 @@
     ],
     "followUp": "🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a la sección de compra.",
     "options": {
-      "asesor": "flowAsesor",
-      "m": "menuPrincipal",
-      "b": "flowAsesoramiento"
+      "ASESOR": "flowAsesor",
+      "M": "menuPrincipal",
+      "B": "flowAsesoramiento"
     }
   },
+
 
   "flowAsesoramientoOtrasCategorias": {
     "message": "🛍️ Otras Categorías\n\n📌 Si no encontraste lo que buscas, visita nuestra tienda completa.",
@@ -160,12 +169,33 @@
     ],
     "followUp": "🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a la sección de compra.",
     "options": {
-      "asesor": "flowAsesor",
-      "m": "menuPrincipal",
-      "b": "flowAsesoramiento"
+      "ASESOR": "flowAsesor",
+      "M": "menuPrincipal",
+      "B": "flowAsesoramiento"
     }
   },
 
+
+  "flowAsesoramientoNuestrasMarcas": {
+    "message": "🏷️ Nuestras Marcas\n\n📌 Descubrí todos los productos de marcas exclusivas que comercializamos en TIDI.",
+    "images": [
+      "https://tiendasdigitalesar.vtexassets.com/assets/vtex.file-manager-graphql/images/2b1c70fa-2d47-4ddc-bb5c-5ca2fdbf88c7___marcas_exclusivas.jpg"
+    ],
+    "buttons": [
+      {
+        "text": "🛒 Ver nuestras marcas",
+        "url": "https://www.tidi.com.ar/nuestras-marcas"
+      }
+    ],
+    "followUp": "🔙 Escribe 'asesor' para que te derivemos con un agente o 'M' para volver al menú principal o 'B' para regresar a la sección de compra.",
+    "options": {
+      "ASESOR": "flowAsesor",
+      "M": "menuPrincipal",
+      "B": "flowAsesoramiento"
+    }
+  },
+
+ 
   "flowAsesor": {
     "message": "👨‍💼 Te estamos derivando con un agente. Por favor, aguarda un momento."
   }

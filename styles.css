@@ -1,149 +1,135 @@
-/* Fuente de WhatsApp */
+/* Fuente WhatsApp */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
-/* General */
-body {
+/* ---------- 1. GENERALES ---------- */
+html, body{
+  height: 100%;
+  margin-top: 10;
   font-family: 'Roboto', sans-serif;
-  background-color: #075E54; /* Verde WhatsApp */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+  background:#ffffff;          /* sin fondo verde */
+  display:flex;
+  justify-content:center;
 }
 
-/* Contenedor del chat */
-.chat-container {
-  width: 350px;
-  max-width: 90%;
-  height: 600px;
-  background-color: #ffffff;
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+/* ---------- 2. CONTENEDOR DEL CHAT ---------- */
+.chat-container{
+  width: 450px;                /* ancho “normal” */
+  max-width: 95%;
+  min-height: 600px;           /* altura mínima tradicional */
+  max-height: 90vh;            /* nunca supera el 90 % de la pantalla */
+  height: auto;                /* crece cuando la respuesta lo requiera */
+  background:#ffffff;
+  border-radius:20px;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;             /* recorta si llega al tope; el interior decide scroll */
+  box-shadow:none;             /* sin sombra exterior */
 }
 
-/* Encabezado del chat */
-.chat-header {
-  background-color: #128C7E;
-  color: white;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: bold;
+/* ---------- 3. ENCABEZADO ---------- */
+.chat-header{
+  background:#128C7E;
+  color:#fff;
+  padding:15px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:bold;
+}
+.chat-header img{ width:30px; height:30px; }
+
+/* ---------- 4. VENTANA DEL CHAT ---------- */
+.chat-window{
+  flex:1;
+  padding:10px;
+  overflow:auto;               /* sólo genera scroll interno si el contenedor ya está al 90 vh */
+  background:#ece5dd;
+  display:flex;
+  flex-direction:column;
 }
 
-.chat-header img {
-  width: 30px;
-  height: 30px;
+/* ---------- 5. MENSAJES ---------- */
+.bot-message{
+  background:#ffffff;
+  padding:8px 12px;
+  border-radius:10px;
+  margin:5px 0;
+  max-width:70%;
+  word-wrap:break-word;
+  align-self:flex-start;
+}
+.user-message{
+  background:#dcf8c6;
+  padding:8px 12px;
+  border-radius:10px;
+  margin:5px 0;
+  max-width:70%;
+  word-wrap:break-word;
+  align-self:flex-end;
 }
 
-/* Ventana del chat */
-.chat-window {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-  background-color: #ece5dd; /* Fondo de WhatsApp */
-  display: flex;
-  flex-direction: column;
+/* ---------- 6. BARRA DE ENTRADA ---------- */
+.input-container{
+  display:flex;
+  padding:10px;
+  background:#ffffff;
+  border-top:1px solid #ddd;
+  align-items:center;
 }
+#user-input{
+  flex:1;
+  padding:8px;
+  border:none;
+  border-radius:20px;
+  background:#f1f1f1;
+  outline:none;
+}
+#send-btn{
+  background:#128C7E;
+  border:none;
+  color:#fff;
+  padding:10px 15px;
+  margin-left:5px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:16px;
+}
+#send-btn:hover{ background:#0d7a69; }
 
-/* Mensajes del bot (izquierda) */
-.bot-message {
-  background-color: #ffffff;
-  padding: 8px 12px;
-  border-radius: 10px;
-  margin: 5px 0;
-  max-width: 70%;
-  word-wrap: break-word;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  align-self: flex-start; /* Se alinea a la izquierda */
+/* ---------- 7. IMÁGENES / BOTONES ---------- */
+.promo-image{
+  width:100%;
+  max-width:320px;
+  height:auto;
+  border-radius:10px;
+  margin-top:10px;
+  display:block;
 }
+.button{
+  display:inline-block;
+  margin:4px 0;
+  padding:8px 12px;
+  background:#007bff;
+  color:#fff !important;
+  text-decoration:none;
+  border-radius:4px;
+}
+.button:hover{ background:#0056b3; }
 
-/* Mensajes del usuario (derecha, completamente alineado) */
-.user-message {
-  background-color: #dcf8c6; /* Verde claro de WhatsApp */
-  padding: 8px 12px;
-  border-radius: 10px;
-  margin: 5px 0;
-  max-width: 70%;
-  word-wrap: break-word;
-  align-self: flex-end; /* Totalmente a la derecha */
-  text-align: left;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+/* ---------- 8. CAJAS SISTEMA (OPC.) ---------- */
+.system-box{
+  border:2px solid #007bff;
+  background:#eaf4ff;
+  color:#004085;
+  padding:12px 16px;
+  border-radius:8px;
+  margin:10px 0;
+  font-weight:bold;
+  max-width:90%;
+  animation:fadeIn .5s ease-in-out;
 }
-
-/* Barra de entrada de texto */
-.input-container {
-  display: flex;
-  padding: 10px;
-  background-color: #ffffff;
-  border-top: 1px solid #ddd;
-  align-items: center;
-}
-
-#user-input {
-  flex: 1;
-  padding: 8px;
-  border: none;
-  border-radius: 20px;
-  background-color: #f1f1f1;
-  outline: none;
-}
-
-#send-btn {
-  background-color: #128C7E;
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  margin-left: 5px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-#send-btn:hover {
-  background-color: #0d7a69;
-}
-
-.promo-image {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  margin-top: 5px;
-}
-
-.promo-link {
-  color: #128C7E;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.promo-link:hover {
-  text-decoration: underline;
-}
-
-.button {
-  display: inline-block;
-  margin: 4px 0;
-  padding: 8px 12px;
-  background-color: #007bff;
-  color: #fff !important;
-  text-decoration: none;
-  border-radius: 4px;
-}
-.button:hover {
-  background-color: #0056b3;
-}
-
-.promo-image {
-  width: 100%;
-  max-width: 320px; /* Permitir más flexibilidad */
-  height: auto; /* Ajuste automático */
-  border-radius: 10px;
-  margin-top: 10px;
-  display: block; /* Asegurar que sean elementos visibles */
+.system-box.hidden{ display:none; }
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(-5px);}
+  to  {opacity:1;transform:translateY(0);}
 }
