@@ -1,6 +1,6 @@
 {
   "flowModificarCompra": {
-    "message": "✏️ Modificar mi compra 🛍️\n\nPara modificar tu compra, necesitaremos algunos datos.\n\n📌 Ingresa el número de pedido que deseas modificar.",
+    "message": "✏️ Modificar mi compra 🛍️\n\nPara modificar tu compra, necesitaremos algunos datos.\n\n📌 Por favor ingresa, tu DNI / CUIT o el número de pedido.",
     "followUp": "🔙 Escribe el número de pedido o 'asesor' para que te derivemos con un agente. También puedes escribir 'M' para volver al menú principal.",
     "options": {
       "asesor": "flowAsesor",
